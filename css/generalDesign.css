@@ -1,0 +1,1080 @@
+/* --------------------------------------------------------
+CSSelio – General Design Stylesheet
+
+Version: 1
+Last modified: February, 2018
+Author: Fernando Ortiz Rico Celio
+Email: fernando.ortizrc@outlook.com
+----------------------------------------------------------*/
+
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+@import url("wideDisplay.css");
+@import url("mediumDisplay.css");
+@import url("mobile.css");
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Muli', sans-serif;
+    outline: none;
+}
+
+
+/*     GRID     */
+.one {
+    min-width: 100% !important;
+}
+
+.two {
+    min-width: calc(49% - 10px) !important;
+    margin-right: 10px;
+}
+
+.flexOne {
+	flex-basis: 350px;
+	margin-left: 4px;
+	margin-right: 4px;
+	flex-grow: 3;
+}
+
+.flexTwo {
+	flex-basis: 300px;
+	margin-left: 4px;
+	margin-right: 4px;
+	flex-grow: 3;
+}
+
+.flexThree {
+	flex-basis: 240px;
+	margin-left: 4px;
+	margin-right: 4px;
+	flex-grow: 2;
+}
+
+.flexFour {
+	flex-basis: 125px;
+	margin-left: 4px;
+	margin-right: 4px;
+	flex-grow: 1;
+}
+
+.flexFive {
+	flex-basis: 80px;
+	margin-left: 4px;
+	margin-right: 4px;
+	flex-grow: 1;
+}
+
+
+#sideBar h3 {
+	margin-bottom: 10px;
+	border-bottom: 1px solid #363636;
+	width: auto;
+	padding-bottom: 10px;
+	color: #202020;
+}
+
+
+#sideBar ul li {
+	padding: 8px 15px 8px 15px;
+	margin-bottom: 3px;
+	border-radius: 4px;
+	cursor: pointer;
+	border: 1px solid rgba(179,207,214,0.50);
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	font-weight: 300;
+	font-size: 15px;
+	color: #363636;
+	letter-spacing: 0.2px;
+}
+
+#sideBar ul li:hover {
+	background: rgba(2,131,141,.10);
+}
+
+
+
+h1 {
+    color: #202020;
+    letter-spacing: 1.9px;
+    font-weight: 800;
+}
+
+h2 {
+    font-weight: 800;
+    color: #202020;
+    letter-spacing: 1.5px;
+}
+
+h3 {
+    font-weight: 700;
+    color: #676767;
+    letter-spacing: 0;
+}
+
+label {
+    font-weight: 700;
+		color: #363636;
+}
+
+p.instructions {
+    font-weight: 300;
+    color: #363636;
+}
+
+p {
+    font-weight: 300;
+    color: #363636;
+}
+
+a {
+    font-weight: 700;
+    color: #02838D;
+    cursor: pointer;
+    text-decoration: none;
+    transition: .4s;
+}
+
+/*
+a:hover, a:active {
+    text-decoration: underline;
+}
+*/
+
+p.instructions, p, a {
+    letter-spacing: 0.7px;
+}
+
+input[type="time"] {
+	width: 80px !important;
+}
+
+input[type="text"], input[type="number"], input[type="date"], input[type="email"], input[type="password"], input[type="tel"], input[type="time"], select {
+    -webkit-appearance:none;
+    background: #FFFFFF;
+    border: 1px solid #9B9B9B;
+    border-radius: 4px;
+    padding: 5px 10px 5px 10px;
+    box-sizing: border-box;
+    font-weight: 300;
+    color: #202020;
+    transition: .3s;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="date"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="tel"]:focus, input[type="search"]:focus, textarea:focus, input[type="time"]:focus {
+    border: 1px solid #00B4C2;
+}
+
+textarea {
+	-webkit-appearance:none;
+	border: 1px solid #9B9B9B;
+	border-radius: 4px;
+	padding: 5px 10px 5px 10px;
+	color: #202020;
+	transition: .3s;
+	box-sizing: border-box;
+	resize: vertical;
+}
+
+.inputError {
+    border: 1px solid #E80031 !important;
+    color: #E80031 !important;
+		background: url(../../images/new/alert.svg) white no-repeat right 10px center !important;
+    /* padding: 5px 35px 5px 10px !important;
+    box-sizing: border-box; */
+}
+
+.inputDisabled {
+    border: 1px solid #F5F5F5 !important;
+    background: #D3D3D3 !important;
+		color: #202020;
+}
+
+.searchDisabled {
+	border: 1px solid #F5F5F5 !important;
+	color: #202020;
+	background: url(../media/search.svg) #D3D3D3 no-repeat left 10px center !important;
+	background-size: 16px !important;
+}
+
+select {
+    background: url(../media/chevron-down.svg) white no-repeat right 10px center;
+    padding: 5px 35px 5px 10px;
+    box-sizing: border-box;
+}
+
+option {
+    background: red;
+}
+
+input[type="search"] {
+    background: url(../../images/new/search.svg) white no-repeat left 10px center;
+    background-size: 16px;
+    -webkit-appearance:none;
+    border: 1px solid #9B9B9B;
+    border-radius: 20px;
+    padding: 5px 10px 5px 30px;
+    box-sizing: border-box;
+    font-weight: 300;
+    color: #363636;
+    transition: .3s;
+}
+
+.topBarTranslucent {
+    background: rgba(255,255,255,0.80);
+    box-shadow: 0 2px 20px 0 rgba(0,0,0,0.20);
+    -webkit-backdrop-filter:blur(10px);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 95;
+}
+
+.flexCenterSides {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items:baseline;
+}
+
+.flexCenterMiddle {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.flexCenterRightCol {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+
+.flexCenterRight {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.flexCenterLeft {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: baseline;
+}
+
+.flexCenterRight a {
+	float: right;
+}
+
+.mainButton {
+    background: #0F5E73;
+    border-radius: 8px;
+    padding: 7px 20px 20px 20px;
+    box-sizing: border-box;
+    border: none;
+    font-weight: 700;
+    font-size: 15px;
+    color: #FFFFFF;
+    letter-spacing: 0.8px;
+    text-align: center;
+    cursor: pointer;
+    transition: .4s;
+    -webkit-appearance:none;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+}
+
+.mainButton:hover, .secondButton:hover {
+    filter: brightness(0.92);
+}
+
+.mainButton:active, .secondButton:active {
+    filter: brightness(1.1);
+}
+
+.destructiveButton {
+	background: rgba(208,2,27,0.21) !important;
+	color: #AC0015;
+}
+
+.secondButton {
+    border: none;
+    border-radius: 8px;
+    padding: 7px 20px 20px 20px;
+    box-sizing: border-box;
+		background: rgba(2,83,141,0.20);
+    font-weight: 600;
+    font-size: 15px;
+    color: #0F5E73;
+    letter-spacing: 0.8px;
+    text-align: center;
+    cursor: pointer;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+}
+
+.disabled {
+    filter: saturate(0.3);
+    opacity: 0.8;
+    cursor: default;
+    box-shadow: none !important;
+}
+
+.thirdButton {
+    border: 1px solid #BEDFE1;
+    padding: 5px 10px 5px 10px;
+    box-sizing: border-box;
+    font-weight: 600;
+    color: #005C63;
+    letter-spacing: 0.8px;
+    text-align: center;
+    cursor: pointer;
+    background: #BEDFE1;
+    border-radius: 100px;
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content: center;
+}
+
+.thirdButton img {
+	margin-right: 10px;
+}
+
+.thirdButtonInactive {
+    border: 1px solid #3B5780 !important;
+    background: #FFFFFF !important;
+    color: #3B5780 !important;
+}
+
+.thirdButtonSup {
+		background: #D0D6DE;
+    border: 1px solid #D0D6DE;
+    color: #3B5780;
+    box-shadow: none !important;
+    padding: 5px 15px 5px 15px;
+    box-sizing: border-box;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.8px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 100px;
+		height: 35px;
+}
+
+.toolButton {
+	background: #02838D;
+	border-radius: 30px;
+	border: none;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.toolButtonAdd {
+	background: url(../../images/new/plus.svg) #02838D no-repeat;
+	border-radius: 30px;
+	border: none;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.buttonDelete {
+	background: url(../../images/new/minus.svg) #E80031 no-repeat;
+	background-size: 10px;
+	background-position: 6px 10px;
+	border: none;
+	height: 22px;
+	width: 22px;
+	border-radius: 11px;
+	cursor: pointer;
+}
+
+.buttonAgotado {
+	background: #D0D6DE;
+	border: none;
+	height: 22px;
+	border-radius: 11px;
+	cursor: pointer;
+	padding: 5px 10px 5px 10px;
+	font-size: 12px;
+	color: #3B5780;
+	font-weight: 600;
+}
+
+.backButton {
+	background: url(../media/chevron-left.svg) no-repeat;
+	background-size: contain;
+	height: 30px;
+	-webkit-appearance:none;
+	width: 30px;
+	border: none;
+	cursor: pointer;
+	background-position: left;
+}
+
+.card {
+    background: #FFFFFF;
+    box-shadow: 0 2px 20px 0 rgba(0,0,0,0.10);
+    border-radius: 8px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+body.gray {
+    background: #e7e7e7;
+}
+
+a.second {
+    margin-top: 15px !important;
+    text-align: center;
+    width: 100%;
+}
+
+.twoButtonsArea {
+    width: calc(100% - 80px);;
+    bottom: 40px;
+    position: absolute;
+    float: left;
+    margin: auto;
+}
+
+.twoButtonsArea input[type="submit"], .twoButtonsArea a {
+    float: left;
+}
+
+.twoButtonsArea input[type="submit"], .twoButtonsArea button {
+    margin-top: 0;
+}
+
+.cardContent {
+    width: 100%;
+}
+
+.flexSpace {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content:  space-between;
+}
+
+.multipleChoice {
+    background: #FFFFFF;
+    border-radius: 6px;
+    color: #02838D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    float: left;
+    text-align: center;
+    border: 2px solid #02838D;
+    flex-flow: column nowrap;
+    max-width: 44%;
+}
+
+.mOn {
+    color: #FFFFFF;
+    background: #02838D;
+}
+
+.mOn img {
+    filter: contrast(0) brightness(2);
+}
+
+
+.multipleChoice img {
+    margin-bottom: 5px;
+		max-width: 50px;
+		min-width: 30px;
+}
+
+input[type="radio"], input[type="checkbox"], input[type="file"] {
+  display: none;
+}
+
+.notification {
+    box-shadow: 0 2px 20px 0 rgba(0,0,0,0.10);
+    border-radius: 8px;
+    min-height: 80px;
+    width: 300px;
+    position: fixed;
+    margin: auto;
+    bottom: 20px;
+    left: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white !important;
+    -webkit-backdrop-filter:blur(10px);
+    backdrop-filter:blur(10px);
+    transition: .4s;
+}
+
+.errorNotif:hover, .infoNotif:hover {
+    opacity: .8 !important;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.05) !important;
+}
+
+@keyframes showNotification {
+    from {left: -300px;}
+    to {left: 20px;}
+}
+
+.errorNotif {
+    background: rgba(232,0,49,.9);
+    cursor: pointer;
+		animation-name: showNotification;
+		animation-duration: .5s;
+		z-index: 99;
+}
+
+.infoNotif {
+		background: #00808A;
+    cursor: pointer;
+		animation-name: showNotification;
+		animation-duration: .5s;
+		z-index: 99;
+}
+
+.errorNotif img, .infoNotif img {
+    width: 35px;
+    filter: contrast(0) brightness(2);
+    float: left;
+    margin-top: 5px;
+		cursor: pointer;
+
+}
+
+.errorNotif label, .errorNotif p, .infoNotif label, .infoNotif p {
+    color: #FFFFFF;
+    float: left;
+    width: calc(100% - 45px);
+    margin-left: 10px;
+		cursor: pointer;
+}
+
+.closeButton {
+    height: 10px;
+    background: url(../media/x.svg) no-repeat;
+    width: 10px;
+    border: none;
+    border-radius: 0;
+    position: absolute;
+    margin: auto;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+		background-size: contain;
+}
+
+.warningNotif {
+	background: #FFFFFF;
+	box-shadow: 0 2px 20px 0 rgba(0,0,0,0.10);
+	border-radius: 8px;
+	height: 180px;
+	width: 480px !important;
+	padding: 25px !important;
+	box-sizing: border-box;
+	margin: auto;
+	top: -0px !important;
+	bottom: 0px !important;
+	left: 0px !important;
+	right: 0px !important;
+	z-index: 99;
+}
+
+.warningNotif label {
+    /*aumentar tamaño*/
+}
+
+.warningNotif img {
+    height: 45px;
+    margin-bottom: 85px;
+    float: left;
+    margin-right: 25px;
+}
+
+.warningNotif label, .warningNotif p {
+    width: calc(100% - 85px);
+    float: left;
+		color: #363636;
+}
+
+.warningNotif div {
+    width: calc(100% - 50px);
+    position: absolute;
+    bottom: 25px;
+}
+
+.warningNotif div button {
+    float: right;
+    margin-left: 10px;
+}
+
+.warningNotif .thirdButton {
+    box-shadow: 0 2px 4px 0 rgba(59,87,128,0.50);
+    transition: .4s;
+}
+
+.warningNotif .thirdButton:hover {
+    box-shadow: 0 2px 2px 0 rgba(59,87,128,0.25);
+}
+
+.blackBack {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	z-index: 90;
+	background: rgba(0,0,0,.15);
+}
+
+.topBarTranslucent #logoSalud {
+    float: left;
+    width: auto;
+}
+
+.topBarTranslucent #options {
+    float: right;
+    position: relative;
+}
+
+.topBarTranslucent #options a, .topBarTranslucent #options div {
+    float: right;
+    cursor: pointer;
+}
+
+.topBarTranslucent #options a img:hover {
+	transition: .2s;
+	transform: scale(1.2);
+}
+
+.topBarTranslucent #options a img:active {
+	transition: .2s;
+	transform: scale(0.9);
+}
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    min-width: 120px;
+    background-color: rgba(0, 0, 0, .7);
+    -webkit-backdrop-filter: blur(5px);
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 20;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.leftTooltip .leftTooltiptext {
+		visibility: hidden;
+    min-width: 120px;
+    background-color: rgba(0, 0, 0, .7);
+    -webkit-backdrop-filter: blur(5px);
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 20;
+		top: -5px;
+    right: 105%;
+    margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.leftTooltip .leftTooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    left: 100%; /* To the right of the tooltip */
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent black;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+	content: " ";
+  position: absolute;
+  bottom: 100%;  /* At the top of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.formBox {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    background: #FFFFFF;
+    border: 1px solid #9B9B9B;
+    border-radius: 4px;
+    float: left;
+		margin-bottom: 20px;
+}
+
+.formBoxHeader {
+	width: calc(100% + 40px);
+	margin-left: -20px;
+	border-bottom: 1px solid #9B9B9B;
+	margin-bottom: 20px;
+	height: 80px;
+	padding-left: 10px;
+	padding-right: 10px;
+	box-sizing: border-box;
+	margin-top: -20px;
+}
+
+.formBoxHeader h3 {
+	margin-bottom: 0px !important;
+}
+
+.formBox button, .formBox #testContent input[type="submit"], .formBox input[type="submit"] {
+	float: right !important;
+	margin-left: 10px;
+}
+
+.flexFormSpace {
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+.formSection {
+	width: 100%;
+	margin-top: 20px;
+}
+
+.formSection:first-of-type {
+	margin-top: 0px;
+}
+
+.formSection h3 {
+	margin-bottom: 0px;
+}
+
+.fichaAlumno {
+    height: 70px;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: pointer;
+		background: #F5F5F5;
+		border-radius: 8px;
+		margin-bottom: 10px;
+}
+
+.fichaAlumno:hover {
+    background: #C0C0C0;
+}
+
+.fichaAlumno > img {
+    height: 50px;
+    width: 50px;
+    float: left;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.fichaAlumno > p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+		text-transform: capitalize;
+}
+
+#contenTabs {
+	height: 100%;
+	max-width: calc(100% - 60px);
+	margin-left: -10px;
+	white-space: nowrap;
+	text-overflow: clip;
+	overflow: hidden;
+	overflow-x: scroll ;
+}
+
+.testTab {
+	height: 100%;
+	padding-right: 10px;
+	padding-left: 10px;
+	display: flex;
+	align-items: center;
+	cursor:pointer;
+	-webkit-appearance: none;
+	background: none;
+	border: none;
+}
+
+.testTab a {
+	color: #4A4A4A !important;
+}
+
+.testTabOn {
+	border-bottom: 2px solid #00B5C4;
+}
+
+.testTabOn a {
+	color: #02838D !important;
+}
+
+.hide {
+	display: none;
+}
+
+#patientData {
+	height: 80%;
+}
+
+#patientData div {
+}
+
+#patientData img {
+	height: 50px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+
+table tr:first-child {
+  border-bottom: 2px solid #4A4A4A;
+}
+
+
+tr:hover, tr:focus {
+	background: rgba(0,0,0,.15);
+}
+
+td {
+	text-align: right;
+	padding-top: 7px;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-bottom: 7px;
+	box-sizing: border-box;
+	/* height: 30px; */
+}
+
+.tdLeft {
+	text-align: left;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: rgba(255, 255, 255, .9);
+	min-width: 100px;
+	max-width: 150px;;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 99;
+	border-radius: 8px;
+	left: -100px;
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+	z-index: 99;
+	box-sizing: border-box;
+}
+
+.dropdown-content a:first-of-type {
+	border-radius: 8px 8px 0px 0px;
+}
+
+.dropdown-content a:last-of-type {
+	border-radius: 0px 0px 8px 8px;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+.linkedTable tr th {
+	height: 40px;
+}
+
+.linkedTable tr {
+	cursor: pointer;
+}
+
+.linkedTable tr td a {
+	opacity: 0;
+	transition: 0;
+}
+
+.linkedTable tr td {
+	vertical-align: middle;
+}
+
+.linkedTable tr td a img {
+	height: 15px;
+}
+
+.linkedTable tr:hover td a {
+	opacity: 1;
+}
+
+.pagContent button {
+	height: 25px;
+	width: 25px;
+	background: #D8EFF2;
+	border: none;
+	color: #02838D;
+	margin: 2px;
+	border-radius: 4px;
+	cursor: pointer;
+	font-weight: 700;
+}
+
+.pagContent button:hover {
+	background: #A7D7DD;
+}
+
+.numPageActive {
+	background: #02838D !important;
+	border: 1px solid #02838D !important;
+	color: #FFFFFF !important;
+}
+
+
+.switch {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 25%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transition: .4s;
+    background-color: #b7bbc1;
+    transition: .4s;
+    height: 23px;
+    width: 50px;
+    margin: 0 auto;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #71ABBF;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #71ABBF;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}

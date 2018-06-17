@@ -1,0 +1,196 @@
+/* --------------------------------------------------------
+CSSelio – Medium Display Stylesheet
+
+Version: 1
+Last modified: February, 2018
+Author: Fernando Ortiz Rico Celio
+Email: fernando.ortizrc@outlook.com
+----------------------------------------------------------*/
+
+
+@media only screen and (max-width: 1124px) {
+    /*     Wide-6     */
+    h1 {
+        font-size: 30px;
+        margin-bottom: 24px;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+
+
+        font-size: 16px;
+        margin-bottom: 24px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    p.instructions {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    a {
+        font-size: 14px;
+    }
+
+    input[type="text"], input[type="number"], input[type="date"], input[type="email"], input[type="password"], input[type="tel"], select, input[type="search"], input[type="time"], .fileUpLabel {
+        height: 35px;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+		textarea {
+			font-size: 14px;
+			margin-bottom: 15px;
+		}
+
+    .topBarTranslucent {
+        height: 60px;
+        padding: 10px;
+				padding-right: 20px;
+				padding-left: 20px;
+        box-sizing: border-box;
+    }
+
+    .mainButton, .mainButtonDisabled, .secondButton {
+/*        min-width: 150px;*/
+        height: 40px;
+        margin-top: 45px;
+    }
+
+    .thirdButton, .thirdButtonSup {
+        height: 35px;
+        min-width: 100px;
+				font-size: 14px;
+    }
+
+		.thirdButton img {
+			max-height: 13px;
+			margin-right: 10px;
+			fill: #005C63;
+		}
+
+		.toolButton, .toolButtonAdd {
+			min-height: 36px;
+			min-width: 36px;
+			max-height: 36px;
+			max-width: 36px;
+		}
+
+		.toolButtonAdd {
+			background: url(../../images/new/plus.svg) #02838D no-repeat;
+			background-size: 16px !important;
+			background-position: 10px 10px !important;
+		}
+
+		.toolButton img {
+			max-height: 16px;
+			max-width: 16px;
+			filter: contrast(0) brightness(2);
+		}
+
+    .displaySpace {
+        width: 100%;
+        left: 0;
+        height: 100%;
+        position: fixed;
+        overflow: auto;
+    }
+
+    #sideBar {
+        width: calc(25% - 10px);
+        float: left;
+        min-height: calc(100% - 120px);
+        padding: 10px;
+        box-sizing: border-box;
+        margin-top: 80px;
+        position: fixed;
+				margin-left: 20px;
+    }
+
+    #mainContent {
+        width: calc(72.5% - 10px);
+        margin-left: 20px;
+        margin-right: 2%;
+        float: right;
+        box-sizing: border-box;
+        /* min-height: 100%; */
+        margin-top: 80px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        overflow: auto;
+        padding-bottom: 80px;
+    }
+
+    .card {
+        width: 320px;
+        height: 420px;
+    }
+
+    #logoSalud {
+        width: 80px;
+        margin-left: calc(50% - 40px);
+        margin-right: calc(50% - 40px);
+        margin-bottom: 45px;
+    }
+
+    .multipleChoice {
+        padding: 5px;
+        min-height: 90px;
+        font-size: 15px;
+        max-width: 42%;
+    }
+
+		.topBarTranslucent #logoSalud {
+		    height: 20px;
+		    margin-left: 0px;
+		    margin-right: 0px;
+		    margin-bottom: 0px;
+		}
+
+		.topBarTranslucent #options {
+		    width: 100%;
+		}
+
+		.topBarTranslucent #options a, .topBarTranslucent #options #imagenPerfilPrincipal {
+		    margin-left: 15px;
+		}
+
+		.topBarTranslucent #options a img {
+		    height: 18px;
+		}
+
+		#menuIcon {
+			display: none;
+		}
+
+		.topBarTranslucent #options #imagenPerfilPrincipal {
+			height: 40px;
+			border-radius: 20px;
+		}
+
+		.mightHide {
+			display: block;
+		}
+
+		.signInWindow {
+			width: 350px !important;
+			height: 400px !important;
+		}
+
+		.signUpWindow {
+			height: 500px !important;
+			width: 600px !important;
+		}
+
+}
