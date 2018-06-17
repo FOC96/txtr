@@ -10,7 +10,7 @@ Email: fernando.ortizrc@outlook.com
 
 @media only screen and (max-width: 1124px) {
     /*     Wide-6     */
-    h1 {
+    h1, .docTitle {
         font-size: 30px;
         margin-bottom: 24px;
     }

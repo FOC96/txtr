@@ -98,7 +98,7 @@ Email: fernando.ortizrc@outlook.com
 
 
 
-h1 {
+h1, .docTitle {
     color: #202020;
     letter-spacing: 1.9px;
     font-weight: 800;
