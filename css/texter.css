@@ -175,6 +175,29 @@
 .editTop {
 	height: 60px;
 	background: white;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.editTop div {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+}
+
+.editTop div button {
+	margin-right: 10px;
+}
+
+.userPic {
+	height: 40px;
+	width: 40px;
+	background: gray;
+	border-radius: 20px;
 }
 
 .docTitle {
@@ -193,8 +216,8 @@
 
 .document-editor__toolbar {
 	z-index: 1;
-	box-shadow: 0 0 5px rgba(0,0,0,.2);
-	border-bottom: none !important;
+	box-shadow: 0 0 8px rgba(0,0,0,.2) !important;
+	border: 1px solid rgba(0,0,0,.12) !important;
 	/* border-top: 1px solid var(--ck-color-toolbar-border); */
 	position: absolute;
 	background: white;
@@ -240,7 +263,7 @@
     border: 1px hsl( 0,0%,82.7% ) solid;
     border-radius: var(--ck-border-radius);
     background: white;
-    box-shadow: 0 0 5px hsla( 0,0%,0%,.1 );
+    box-shadow: 0 0 5px hsla( 0,0%,0%,.15);
     margin: 0 auto;
 }
 
@@ -264,4 +287,10 @@ background: white !important;
 border: none !important;
 z-index: 3 !important;
 border: 1px solid rgba(0,0,0,.2)
+}
+
+.ck.ck-editor__editable:not(.ck-editor__nested-editable).ck-focused {
+outline: none;
+border: none !important;
+box-shadow: 0 0 5px hsla( 0,0%,0%,.15) !important;
 }
