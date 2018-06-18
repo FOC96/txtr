@@ -13,7 +13,7 @@ function showAlert(title, msg, action, fun) {
 		+'</div>'
 	+'</div>'
 
-	document.body.innerHTML += cont
+	document.body.insertAdjacentHTML('afterend', cont);
 }
 
 function showBack() {
@@ -24,14 +24,14 @@ function showBack() {
 }
 
 function hidePops() {
-	notif = document.querySelector('.popWindow');
-	back = document.querySelector('.backBlack');
+	notif = document.querySelectorAll('.popWindow');
+	back = document.querySelectorAll('.backBlack');
 
-	notif.classList.add('hidePopUp');
-	back.classList.add('hideBack');
+	notif[notif.length-1].classList.add('hidePopUp');
+	back[back.length-1].classList.add('hideBack');
 	setTimeout(function() {
-		notif.remove()
-		back.remove()
+		notif[notif.length-1].remove()
+		back[back.length-1].remove()
 	}, 300)
 }
 
@@ -46,4 +46,26 @@ function hideNotif() {
 		notif2.remove()
 		back2.remove()
 	}, 300)
+}
+
+function confirmDel(tipo) {
+	if (tipo == "1") {
+		// Documento
+		al = confirm('¿Seguro desea eliminar este documento?')
+		if (al) {
+			// Eliminar objeto
+
+			alert('Documento eliminado')
+		}
+	} else {
+		// Folder
+		al = confirm('¿Seguro desea eliminar esta carpeta?\nTodo su contenido será eliminado también.')
+		if (al) {
+			// Eliminar objeto
+
+			alert('Carpeta eliminada')
+			location.assign('myFolders.html')
+		}
+	}
+
 }

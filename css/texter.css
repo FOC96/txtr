@@ -100,7 +100,7 @@
 	border-radius: 8px;
 	padding: 10px;
 	box-sizing: border-box;
-	overflow: hidden;
+	/* overflow: hidden; */
 	background: white;
 	cursor: pointer;
 	margin: 15px;
@@ -110,17 +110,14 @@
 	justify-content: flex-end;
 	box-shadow: 0px 4px 10px 0px rgba(0,0,0,.12);
 	transition: .4s;
+	position: relative;
 }
 
-.file[aria-selected=true] {
-	background-color: red;
-}
-
-.file:hover {
+.file:hover, .folder:hover {
 	box-shadow: 0px 8px 15px 1px rgba(0,0,0,.16);
 }
 
-.file p:first-child {
+.file p:first-child, .folder p:first-child {
 	font-weight: 600;
 	margin-bottom: 10px;
 }
@@ -330,4 +327,244 @@ box-shadow: 0 0 5px hsla( 0,0%,0%,.15) !important;
 .profileInfo h3, .profileInfo p {
 	margin-bottom: 5px;
 	text-align: center;
+}
+
+.folder {
+	height: 120px;
+	width: 200px;
+	border-radius: 10px;
+	padding: 10px;
+	box-sizing: border-box;
+	overflow: hidden;
+	background: url(../media/folder.png);
+	background-position: center top;
+	background-size: 200px auto;
+	cursor: pointer;
+	margin: 15px;
+	/* border: 1px solid rgb(230,230,230); */
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: flex-end;
+	box-shadow: 0px 4px 10px 0px rgba(0,0,0,.12);
+	transition: .4s;
+}
+
+.folder p {
+	color: #FFFFFF;
+	font-size: 1em;
+	margin-bottom: 0px !important;
+	max-height: 70px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+
+.newFolder {
+	height: 120px;
+	width: 200px;
+	border-radius: 10px;
+	padding: 10px;
+	box-sizing: border-box;
+	overflow: hidden;
+	background: url(../media/folder.png);
+	filter: grayscale();
+	background-position: center top;
+	background-size: 200px auto;
+	cursor: pointer;
+	margin: 15px;
+	/* border: 1px solid rgb(230,230,230); */
+	display: flex;
+	flex-flow: column wrap;
+	justify-content:center;
+	box-shadow: 0px 4px 10px 0px rgba(0,0,0,.12);
+	transition: .4s;
+}
+
+.newFolder p {
+	text-align: center;
+	font-weight: 600;
+	margin-top: 20px;
+}
+
+.toolBtn {
+	border-radius: 20px;
+	height: 40px;
+	width: 40px;
+	margin-right: 10px;
+	border: none;
+	background: transparent;
+	transition: .4s;
+	cursor: pointer;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.toolBtn:hover {
+	background: rgba(0,0,0,.06);
+}
+
+.toolBtn:active {
+	background: rgba(0,0,0,.12);
+}
+
+.toolBtn img {
+	max-height: 20px !important;
+}
+
+#folderTools {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.backBlack {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	z-index: 80;
+	background: rgba(0,0,0,.25);
+	transition: .4s;
+	animation: fadeIn;
+	animation-iteration-count: 1;
+	animation-duration: .4s;
+}
+
+.notifBackBlack {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	z-index: 92;
+	background: rgba(0,0,0,.25);
+	transition: .4s;
+	animation: fadeIn;
+	animation-iteration-count: 1;
+	animation-duration: .4s;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes expand {
+	from {
+		opacity: 0;
+		transform: scale(0.95);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes shrink {
+	from {
+		opacity: 1;
+		transform: scale(1);
+	}
+	to {
+		opacity: 0;
+		transform: scale(0.95);
+	}
+}
+
+.hideBack {
+	animation: fadeOut;
+	animation-iteration-count: 1;
+	animation-duration: .4s;
+}
+
+.hidePopUp {
+	animation: shrink !important;
+	animation-iteration-count: 1 !important;
+	animation-duration: .3s !important;
+}
+
+.popWindow {
+	background: white;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	padding: 30px;
+	box-sizing: border-box;
+	margin: auto;
+	z-index: 91;
+	animation: expand;
+	animation-iteration-count: 1;
+	animation-duration: .5s;
+}
+
+.notif {
+	background: #FFFFFF;
+	box-shadow: 0 2px 20px 0 rgba(0,0,0,0.20);
+	border-radius: 6px;
+	width: 80%;
+	max-width: 500px;
+	padding: 20px;
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	height: 200px;
+	z-index: 93 !important;
+}
+
+.deleteButton {
+	position: absolute;
+	background: url(../media/delete3.svg) rgba(255,0,0,0.2) no-repeat;
+	background-position: center;
+	cursor: pointer;
+	height: 40px;
+	width: 40px;
+	border: none;
+	border-radius: 20px;
+	margin: auto;
+	top:-10px;
+	right: -10px;
+	left: auto;
+	bottom: auto;
+	display: none;
+	transition: .4s;
+	opacity: 0;
+}
+
+.file:hover .deleteButton {
+	display: block;
+	opacity: 1;
+}
+
+.imgPick {
+	width: 150px;
+	height: 150px;
+	border-radius: 75px;
+	background: gray;
+	margin: auto;
+	left: 0px;
+	right: 0px;
+	cursor: pointer;
+	float: left;
+	margin-left: calc(50% - 75px);
+	margin-right: calc(50% - 75px);
+}
+
+.right {
+	float: right
 }

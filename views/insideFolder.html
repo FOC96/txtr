@@ -32,58 +32,22 @@
 			<div class="transTop">
 			<!--  Encabezado-->
 				<div>
-					<!-- <h3>Ruta de carpetas /</h3> -->
-					<h1>Escritorio</h1>
+					<h3>Mis Carpetas</h3>
+					<input type="text" name="" value="Nombre de la Carpeta" class="docTitle">
 				</div>
-				<div class="searchSection">
-					<!-- <button class="searchButton" onclick="showSearch()"></button>
-					<input type="search" placeholder="Buscar..." id="searchInput" class="hidei"> -->
+				<div id="folderTools">
+					<button class="toolBtn"><img src="../media/back.svg" alt="" oncanplay="history.location.back()"></button>
+					<button class="toolBtn"><img src="../media/delete2.svg" alt=""  onclick="confirmDel(2)"></button>
 				</div>
 			</div>
 			<!--  CONTENIDO-->
 			<div class="mainContent">
+
 				<div class="file">
-					<button type="button" class="deleteButton"></button>
+					<button type="button" class="deleteButton" onclick="confirmDel(1)"></button>
 					<p>Title</p>
 					<p>Date</p>
 				</div>
-
-				<div class="file">
-					<button type="button" class="deleteButton"></button>
-					<p>Title</p>
-					<p>Date</p>
-				</div>
-
-				<div class="file">
-					<button type="button" class="deleteButton"></button>
-					<p>Title</p>
-					<p>Date</p>
-				</div>
-
-				<div class="file">
-					<button type="button" class="deleteButton"></button>
-					<p>Title</p>
-					<p>Date</p>
-				</div>
-
-				<div class="file">
-					<button type="button" class="deleteButton"></button>
-					<p>Title</p>
-					<p>Date</p>
-				</div>
-
-				<div class="file">
-					<button type="button" class="deleteButton"></button>
-					<p>Title</p>
-					<p>Date</p>
-				</div>
-
-				<div class="file">
-					<button type="button" class="deleteButton"></button>
-					<p>Title</p>
-					<p>Date</p>
-				</div>
-
 
 			</div>
 
