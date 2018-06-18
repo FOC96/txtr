@@ -527,27 +527,89 @@ box-shadow: 0 0 5px hsla( 0,0%,0%,.15) !important;
 	z-index: 93 !important;
 }
 
-.deleteButton {
-	position: absolute;
-	background: url(../media/delete3.svg) rgba(255,0,0,0.2) no-repeat;
-	background-position: center;
+.fileTools button {
 	cursor: pointer;
-	height: 40px;
-	width: 40px;
-	border: none;
-	border-radius: 20px;
-	margin: auto;
-	top:-10px;
-	right: -10px;
-	left: auto;
-	bottom: auto;
-	display: none;
-	transition: .4s;
-	opacity: 0;
 }
 
-.file:hover .deleteButton {
-	display: block;
+.fileTools {
+	background: rgba(10,10,10,.55);
+	margin: auto;
+	top:auto;
+	right: 0px;
+	left: 0px;
+	bottom: 10px;
+	height: 35px;
+	width: 100px;
+	position: absolute;
+	border-radius: 120px;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: space-around;
+	opacity: 0;
+	transition: .4s;
+	-webkit-backdrop-filter:blur(2px);
+	padding-left: 2px;
+	padding-right: 2px;
+	box-sizing: border-box;
+}
+
+.deleteButton {
+	background: url(../media/delete3.svg) rgba(0,0,0,0) no-repeat;
+	background-size: 15px;
+	background-position: center;
+	cursor: pointer;
+	height: 30px;
+	width: 30px;
+	border: none;
+	border-radius: 20px;
+	transition: .4s;
+	margin-right: 5px;
+}
+
+.deleteButton:hover {
+	background: url(../media/delete3.svg) rgba(0,0,0,0.2) no-repeat;
+	background-size: 15px;
+	background-position: center;
+}
+
+.downloadButton {
+	background: url(../media/download.svg) rgba(0,0,0,0) no-repeat;
+	background-size: 15px;
+	background-position: center;
+	cursor: pointer;
+	height: 30px;
+	width: 30px;
+	border: none;
+	border-radius: 20px;
+	transition: .4s;
+}
+
+.downloadButton:hover {
+	background: url(../media/download.svg) rgba(0,0,0,0.2) no-repeat;
+	background-size: 15px;
+	background-position: center;
+}
+
+.editButton {
+	background: url(../media/edit2.svg) rgba(0,0,0,0) no-repeat;
+	background-size: 15px;
+	background-position: center;
+	cursor: pointer;
+	height: 30px;
+	width: 30px;
+	border: none;
+	border-radius: 20px;
+	transition: .4s;
+}
+
+.editButton:hover {
+	background: url(../media/edit2.svg) rgba(0,0,0,0.2) no-repeat;
+	background-size: 15px;
+	background-position: center;
+}
+
+.file:hover .fileTools {
 	opacity: 1;
 }
 
