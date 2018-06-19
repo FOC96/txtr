@@ -630,3 +630,29 @@ box-shadow: 0 0 5px hsla( 0,0%,0%,.15) !important;
 .right {
 	float: right
 }
+
+.newFile {
+	height: 200px;
+	width: 160px;
+	border-radius: 8px;
+	padding: 10px;
+	box-sizing: border-box;
+	background: rgb(200,200,200);
+	cursor: pointer;
+	margin: 15px;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+	transition: .4s;
+	position: relative;
+}
+
+.newFile img {
+	height: 30px;
+	margin-bottom: 10px;
+}
+
+.newFile p {
+	text-align: center;
+}

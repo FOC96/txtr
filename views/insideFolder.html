@@ -21,11 +21,11 @@
 			</div>
 			<input type="search" id="searchInput">
 			<div class="menu">
-				<a href=""><img src="../media/user.svg" alt="">Mi perfil</a>
-				<a href=""><img src="../media/file.svg" alt="">Mis documentos</a>
+				<a href="editProfile.html"><img src="../media/user.svg" alt="">Mi perfil</a>
+				<a href="dashboard.html"><img src="../media/file.svg" alt="">Mis documentos</a>
 				<a href=""><img src="../media/recent.svg" alt="">Recientes</a>
 				<a href=""><img src="../media/shared.svg" alt="">Documentos compartidos</a>
-				<a href=""><img src="../media/folder.svg" alt="">Mis carpetas</a>
+				<a href="myFolders.html"><img src="../media/folder.svg" alt="">Mis carpetas</a>
 				<a href=""><img src="../media/logOut.svg" alt="">Cerrar Sesión</a>
 			</div>
 		</div>
@@ -37,7 +37,7 @@
 					<input type="text" name="" value="Nombre de la Carpeta" class="docTitle">
 				</div>
 				<div id="folderTools">
-					<button class="toolBtn"><img src="../media/back.svg" alt="" oncanplay="history.location.back()"></button>
+					<button class="toolBtn" onclick="location.assign('myFolders.html')"><img src="../media/back.svg" alt="" ></button>
 					<button class="toolBtn"><img src="../media/delete2.svg" alt=""  onclick="confirmDel(2)"></button>
 				</div>
 			</div>
@@ -52,6 +52,11 @@
 					</div>
 					<p>Title</p>
 					<p>Date</p>
+				</div>
+
+				<div class="newFile">
+					<img src="../media/plus.svg" alt="">
+					<p>Crear Nuevo Documento</p>
 				</div>
 
 			</div>
