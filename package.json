@@ -1,0 +1,25 @@
+{
+  "name": "txtr",
+  "version": "1.0.0",
+  "description": "Academic final project for Distributed Systems course at Universidad Autónoma de Querétaro.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FOC96/txtr.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FOC96/txtr/issues"
+  },
+  "homepage": "https://github.com/FOC96/txtr#readme",
+  "devDependencies": {
+    "electron": "^2.0.2",
+    "electron-packager": "^12.1.0"
+  }
+}
