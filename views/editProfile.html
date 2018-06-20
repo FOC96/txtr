@@ -15,18 +15,18 @@
 		<div class="sideSection">
 			<!--  Side-->
 			<div class="profileInfo">
-				<img src="" alt="" class="userPicMain">
-				<h3>Primer Nombre</h3>
-				<p>Apellidos</p>
+				<!-- <img src="" alt="" class="userPicMain"> -->
+				<h3 id="name">Cargando...</h3>
+				<p id="surname">Cargando...</p>
 			</div>
 			<input type="search" id="searchInput">
 			<div class="menu">
-				<a href="editProfile.html"><img src="../media/user.svg" alt="">Mi perfil</a>
+				<a href="myFolders.html"><img src="../media/folder.svg" alt="">Mis carpetas</a>
 				<a href="dashboard.html"><img src="../media/file.svg" alt="">Mis documentos</a>
 				<a href=""><img src="../media/recent.svg" alt="">Recientes</a>
 				<a href=""><img src="../media/shared.svg" alt="">Documentos compartidos</a>
-				<a href="myFolders.html"><img src="../media/folder.svg" alt="">Mis carpetas</a>
-				<a href=""><img src="../media/logOut.svg" alt="">Cerrar Sesión</a>
+				<a href="editProfile.html"><img src="../media/user.svg" alt="">Mi perfil</a>
+				<a href="" onclick="logOut()"><img src="../media/logOut.svg" alt="">Cerrar Sesión</a>
 			</div>
 		</div>
 		<div class="mainSection">
@@ -40,11 +40,11 @@
 			<!--  CONTENIDO-->
 			<div class="mainContent">
 				<div class="one flexFormSpace">
-					<div class="one">
+					<!-- <div class="one">
 						<label for="userPicUp" class="imgPick"></label>
 						<input type="file" id="userPicUp">
-					</div>
-					<div class="flexThree">
+					</div> -->
+					<div class="flexTwo">
 						<label for="" class="one">Nombre</label>
 						<input type="text" name="" value="" class="one">
 					</div>
@@ -52,7 +52,7 @@
 						<label for="" class="one">Apellidos</label>
 						<input type="text" name="" value="" class="one">
 					</div>
-					<div class="flexTwo">
+					<div class="one">
 						<label for="" class="one">Correo electrónico</label>
 						<input type="text" name="" value="" class="one">
 					</div>

@@ -1,3 +1,8 @@
+window.addEventListener("load",()=>{
+	document.getElementById("name").textContent = localStorage.getItem("name");
+	document.getElementById("surname").textContent = localStorage.getItem("surname");
+});
+
 function showSearch() {
 	document.getElementById('searchInput').classList.toggle('hidei');
 	document.getElementById('searchInput').focus();
@@ -27,4 +32,20 @@ function share() {
 function updateInfo() {
 	
 
+}
+
+logOut = ()=>{
+	localStorage.clear();
+	// location.href = "../index.html"
+}
+
+loadMenu = (file)=>{
+	axios.get('../views/'+file)
+	.then(function (response) {
+		// mainSection
+		console.log(response);
+	})
+	.catch(function (error) {
+		console.log(error);
+	});
 }

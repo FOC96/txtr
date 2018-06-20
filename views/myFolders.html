@@ -10,23 +10,24 @@
 		<script src="../js/notificaciones.js" charset="utf-8"></script>
 		<script src="../js/index.js" charset="utf-8"></script>
 		<script src="../js/main.js" charset="utf-8"></script>
+		<script src="../js/folders/folders.js" charset="utf-8"></script>
 	</head>
 	<body>
 		<div class="sideSection">
 			<!--  Side-->
 			<div class="profileInfo">
-				<img src="" alt="" class="userPicMain">
-				<h3>Primer Nombre</h3>
-				<p>Apellidos</p>
+				<!-- <img src="" alt="" class="userPicMain"> -->
+				<h3 id="name">Cargando...</h3>
+				<p id="surname">Cargando...</p>
 			</div>
 			<input type="search" id="searchInput">
 			<div class="menu">
-				<a href="editProfile.html"><img src="../media/user.svg" alt="">Mi perfil</a>
+				<a href="myFolders.html"><img src="../media/folder.svg" alt="">Mis carpetas</a>
 				<a href="dashboard.html"><img src="../media/file.svg" alt="">Mis documentos</a>
 				<a href=""><img src="../media/recent.svg" alt="">Recientes</a>
 				<a href=""><img src="../media/shared.svg" alt="">Documentos compartidos</a>
-				<a href="myFolders.html"><img src="../media/folder.svg" alt="">Mis carpetas</a>
-				<a href=""><img src="../media/logOut.svg" alt="">Cerrar Sesión</a>
+				<a href="editProfile.html"><img src="../media/user.svg" alt="">Mi perfil</a>
+				<a href="" onclick="logOut()"><img src="../media/logOut.svg" alt="">Cerrar Sesión</a>
 			</div>
 		</div>
 		<div class="mainSection">
@@ -39,29 +40,13 @@
 			</div>
 			<!--  CONTENIDO-->
 			<div class="mainContent">
-				<div class="folder">
-					<p>Aquí va el mega título de la carpeta super genial alv compa</p>
+				<div class="folder" onclick="insideForder(1)">
+					<p>Carpeta Prueba</p>
 				</div>
-
-				<div class="folder">
-					<p>Título</p>
-				</div>
-
-				<div class="folder">
-					<p>Título</p>
-				</div>
-
 				<div class="newFolder">
 					<p>Añadir carpeta</p>
 				</div>
-
-
 			</div>
-
-
-
 		</div>
-
-
 	</body>
 </html>

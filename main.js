@@ -27,14 +27,12 @@ app.on('ready', function () {
     // Crea una ventana
     mainWindow = new BrowserWindow({
         titleBarStyle: 'hidden',  //Le damos algunas propiedad de nuestra ventana, por ejemplo ocultamos el TitleBar.
-        // width: 800,
-        // height: 400,
-        // fullscreen: true,
+
         minWidth: 800,
         minHeight: 400,
         backgroundColor: '#ececec',
         show: false,
-        icon: __dirname + '/favicon.ico', // Podemos ejecutar con un favicon.
+        icon: __dirname + '/assets/logo.png', // Podemos ejecutar con un favicon.
         //icon: path.join(__dirname, 'assets/icons/mac/icon.icns')
     });
     // Carga el html page en un window

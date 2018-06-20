@@ -1,3 +1,10 @@
+// window.addEventListener("load",()=>{
+// 	if(localStorage.getItem("token") != ""){
+// 		location.href = './views/dashboard.html';
+// 	} else {
+// 		location.heref = "../index.html";
+// 	}
+// })
 //Regresa de regInst a back
 function showNormal() {
 	window.history.back()
@@ -140,29 +147,80 @@ function showSignUp() {
 function signInAction() {
 	email = document.getElementById('usermail').value
 	pass = document.getElementById('userPass').value
-
+	
 	if (email == '' || pass == '') {
 		showAlert("Campos vacíos", "Has dejado campos vacíos", "Aceptar", "hideNotif()")
-	} else {
-		// Checar credenciales
+		return null;
 	}
+	axios.post('http://192.241.142.12:3000/auth/login', {
+		email: email,
+		password: pass 
+	})
+	.then(function (response) {
+		console.log(response);
+		if (!response.data.success){
+			showAlert("Atención", "Correo o contraseña no validos, Verifica", "Aceptar", "hideNotif()")
+		} else if (response.data.success){
+			localStorage.setItem("token", response.data.data.token);
+			localStorage.setItem("email", response.data.user.email);
+			localStorage.setItem("name", response.data.user.name);
+			localStorage.setItem("surname", response.data.user.surnames);
+			localStorage.setItem("id", response.data.user._id);
+			window.location.assign("./views/myFolders.html");
+		} else {
+			showAlert("Atención", "Algo ha salido mal intenta más tarde", "Aceptar", "hideNotif()")
+		}
+	})
+	.catch(function (error) {
+		console.log(error);
+	});
 }
 
 // Registras
-function signUpAction() {
+signUpAction = ()=> {
 	name = document.getElementById('userName').value
 	last = document.getElementById('userLast').value
 	email = document.getElementById('usermail').value
 	pass = document.getElementById('userPass').value
 	passV = document.getElementById('userPassV').value
-
+	
 	if (name == '' || last == '' || email == '' || pass == '' || passV == '') {
-		alert('Hay campos vacíos')
-	} else {
-		if (pass === passV) {
-			// SE PUDO
-		} else {
-			alert('Las contraseñas no coinciden')
-		}
+		showAlert("Atención", "No debe de haber campos vacíos", "Aceptar", "hideNotif()")
+		return null;
 	}
+	if (pass === passV) {
+		axios.post('http://192.241.142.12:3000/register', {
+			name: name,
+			surnames: last,
+			email: email,
+			password: pass
+		})
+		.then(function (response) {
+			console.log(response.data);
+			res = response.data;
+			if (!res.success){
+				if(res.errors.code == 11000){
+					showAlert("Correo ya registrado", "El correo que ha introducido ya se encuentra registrado", "Aceptar", "hideNotif()")
+				} else {
+					showAlert("Atención", "Algo ha salido mal intenta más tarde", "Aceptar", "hideNotif()")
+				}
+			} else if (res.success){
+				showAlert("Correcto", "Bienvenido, a continuación inicia Sesión", "Aceptar", "logIn()");
+			} else {
+				showAlert("Atención", "Algo ha salido mal intenta más tarde", "Aceptar", "hideNotif()")
+			}
+		})
+		.catch(function (error) {
+			console.log(error);
+		});
+	} else {
+		showAlert("Atención", "Verifica las contraseñas", "Aceptar", "hideNotif()")
+	}
+}
+
+logIn = ()=>{
+	hideNotif();
+	setTimeout(() => {
+		showSignIn();
+	}, 2000);
 }

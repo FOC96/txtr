@@ -54,7 +54,6 @@ function confirmDel(tipo) {
 		al = confirm('¿Seguro desea eliminar este documento?')
 		if (al) {
 			// Eliminar objeto
-
 			alert('Documento eliminado')
 		}
 	} else {
@@ -62,7 +61,6 @@ function confirmDel(tipo) {
 		al = confirm('¿Seguro desea eliminar esta carpeta?\nTodo su contenido será eliminado también.')
 		if (al) {
 			// Eliminar objeto
-
 			alert('Carpeta eliminada')
 			location.assign('myFolders.html')
 		}
