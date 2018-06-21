@@ -2,14 +2,16 @@
 <html>
 <head>
     <meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, maximum-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, maximum-scale=1.0">
     <title>Editor</title>
-		<link rel="stylesheet" href="../css/generalDesign.css">
-		<link rel="stylesheet" href="../css/texter.css">
-		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<link rel="stylesheet" href="<?=CSS?>generalDesign.css">
+	<link rel="stylesheet" href="<?=CSS?>texter.css">
+
+	<script src="<?=JS?>config.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/10.0.1/decoupled-document/ckeditor.js"></script>
-		<script src="../js/main.js" charset="utf-8"></script>
+	<script src="<?=JS?>main.js" charset="utf-8"></script>
 </head>
 <body>
 	<div class="editTop">

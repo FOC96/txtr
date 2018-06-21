@@ -3,7 +3,7 @@
 	height: 100%;
 	position: fixed;
 	z-index: -1;
-	background: url(../media/back1.jpg);
+	background: url(../img/back1.jpg);
 	background-size: cover;
 }
 
@@ -293,14 +293,14 @@ label {
 }
 
 .deleteTool {
-	background: url(../media/delete.svg) rgba(208,2,27,0.20);
+	background: url(../img/delete.svg) rgba(208,2,27,0.20);
 	background-size: 14px;
 	background-repeat: no-repeat;
 	background-position: center;
 }
 
 .editTool {
-	background: url(../media/edit.svg) rgba(2,83,141,0.20);
+	background: url(../img/edit.svg) rgba(2,83,141,0.20);
 	background-size: 14px;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -581,21 +581,21 @@ label {
 
 .eventSearch {
 	padding-left: 30px !important;
-	background: url(../media/search.svg) left center no-repeat !important;
+	background: url(../img/search.svg) left center no-repeat !important;
 	background-size: 16px !important;
 	box-sizing: border-box;
 }
 
 .placeSearch {
 	padding-left: 30px !important;
-	background: url(../media/place.svg) left center no-repeat !important;
+	background: url(../img/place.svg) left center no-repeat !important;
 	background-size: 16px !important;
 	box-sizing: border-box;
 }
 
 .typeSearch {
 	padding-left: 30px !important;
-	background: url(../media/clock.svg) left center no-repeat !important;
+	background: url(../img/clock.svg) left center no-repeat !important;
 	background-size: 16px !important;
 	box-sizing: border-box;
 }

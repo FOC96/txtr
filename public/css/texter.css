@@ -69,7 +69,7 @@
 }
 
 .searchButton {
-	background: url(../media/search.svg) no-repeat;
+	background: url(../img/search.svg) no-repeat;
 	height: 25px;
 	width: 25px;
 	background-position: center;
@@ -138,7 +138,7 @@
 	border-radius: 0px;
 	width: 100%;
 	margin: 20px 0px 10px 0px;
-	background: url(../media/search.svg) no-repeat;
+	background: url(../img/search.svg) no-repeat;
 	background-size: 16px;
 	background-position: left 5px center;
 	padding-left: 20px;
@@ -336,7 +336,7 @@ box-shadow: 0 0 5px hsla( 0,0%,0%,.15) !important;
 	padding: 10px;
 	box-sizing: border-box;
 	overflow: hidden;
-	background: url(../media/folder.png);
+	background: url(../img/folder.png);
 	background-position: center top;
 	background-size: 200px auto;
 	cursor: pointer;
@@ -366,7 +366,7 @@ box-shadow: 0 0 5px hsla( 0,0%,0%,.15) !important;
 	padding: 10px;
 	box-sizing: border-box;
 	overflow: hidden;
-	background: url(../media/folder.png);
+	background: url(../img/folder.png);
 	filter: grayscale();
 	background-position: center top;
 	background-size: 200px auto;
@@ -555,7 +555,7 @@ box-shadow: 0 0 5px hsla( 0,0%,0%,.15) !important;
 }
 
 .deleteButton {
-	background: url(../media/delete3.svg) rgba(0,0,0,0) no-repeat;
+	background: url(../img/delete3.svg) rgba(0,0,0,0) no-repeat;
 	background-size: 15px;
 	background-position: center;
 	cursor: pointer;
@@ -568,13 +568,13 @@ box-shadow: 0 0 5px hsla( 0,0%,0%,.15) !important;
 }
 
 .deleteButton:hover {
-	background: url(../media/delete3.svg) rgba(0,0,0,0.2) no-repeat;
+	background: url(../img/delete3.svg) rgba(0,0,0,0.2) no-repeat;
 	background-size: 15px;
 	background-position: center;
 }
 
 .downloadButton {
-	background: url(../media/download.svg) rgba(0,0,0,0) no-repeat;
+	background: url(../img/download.svg) rgba(0,0,0,0) no-repeat;
 	background-size: 15px;
 	background-position: center;
 	cursor: pointer;
@@ -586,13 +586,13 @@ box-shadow: 0 0 5px hsla( 0,0%,0%,.15) !important;
 }
 
 .downloadButton:hover {
-	background: url(../media/download.svg) rgba(0,0,0,0.2) no-repeat;
+	background: url(../img/download.svg) rgba(0,0,0,0.2) no-repeat;
 	background-size: 15px;
 	background-position: center;
 }
 
 .editButton {
-	background: url(../media/edit2.svg) rgba(0,0,0,0) no-repeat;
+	background: url(../img/edit2.svg) rgba(0,0,0,0) no-repeat;
 	background-size: 15px;
 	background-position: center;
 	cursor: pointer;
@@ -604,7 +604,7 @@ box-shadow: 0 0 5px hsla( 0,0%,0%,.15) !important;
 }
 
 .editButton:hover {
-	background: url(../media/edit2.svg) rgba(0,0,0,0.2) no-repeat;
+	background: url(../img/edit2.svg) rgba(0,0,0,0.2) no-repeat;
 	background-size: 15px;
 	background-position: center;
 }

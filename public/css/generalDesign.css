@@ -197,12 +197,12 @@ textarea {
 .searchDisabled {
 	border: 1px solid #F5F5F5 !important;
 	color: #202020;
-	background: url(../media/search.svg) #D3D3D3 no-repeat left 10px center !important;
+	background: url(../img/search.svg) #D3D3D3 no-repeat left 10px center !important;
 	background-size: 16px !important;
 }
 
 select {
-    background: url(../media/chevron-down.svg) white no-repeat right 10px center;
+    background: url(../img/chevron-down.svg) white no-repeat right 10px center;
     padding: 5px 35px 5px 10px;
     box-sizing: border-box;
 }
@@ -419,7 +419,7 @@ input[type="search"] {
 }
 
 .backButton {
-	background: url(../media/chevron-left.svg) no-repeat;
+	background: url(../img/chevron-left.svg) no-repeat;
 	background-size: contain;
 	height: 30px;
 	-webkit-appearance:none;
@@ -576,7 +576,7 @@ input[type="radio"], input[type="checkbox"], input[type="file"] {
 
 .closeButton {
     height: 10px;
-    background: url(../media/x.svg) no-repeat;
+    background: url(../img/x.svg) no-repeat;
     width: 10px;
     border: none;
     border-radius: 0;

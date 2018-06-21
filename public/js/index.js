@@ -1,8 +1,8 @@
 // window.addEventListener("load",()=>{
 // 	if(localStorage.getItem("token") != ""){
-// 		location.href = './views/dashboard.html';
+// 		location.href = config.url+"Dashboard";
 // 	} else {
-// 		location.heref = "../index.html";
+// 		location.heref = config.url;
 // 	}
 // })
 //Regresa de regInst a back
@@ -166,7 +166,7 @@ function signInAction() {
 			localStorage.setItem("name", response.data.user.name);
 			localStorage.setItem("surname", response.data.user.surnames);
 			localStorage.setItem("id", response.data.user._id);
-			window.location.assign("./views/myFolders.html");
+			window.location.assign(config.url+"Dashboard");
 		} else {
 			showAlert("Atención", "Algo ha salido mal intenta más tarde", "Aceptar", "hideNotif()")
 		}

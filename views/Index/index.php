@@ -4,16 +4,16 @@
 		<meta charset="utf-8">
 		<title>texter</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, maximum-scale=1.0">
-		<link rel="stylesheet" href="css/generalDesign.css">
-		<script src="./js/libs/axios/axios.min.js"></script>
-		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-		<link rel="stylesheet" href="css/connIT.css">
-		<script src="js/notificaciones.js" charset="utf-8"></script>
-		<script src="js/index.js" charset="utf-8"></script>
+		<link rel="stylesheet" href="<?=CSS?>generalDesign.css">
+		<script src="<?=JS?>libs/axios/axios.min.js"></script>
+		<link rel="stylesheet" href="<?=CSS?>connIT.css">
+		<script src="<?=JS?>config.js" charset="utf-8"></script>
+		<script src="<?=JS?>notificaciones.js" charset="utf-8"></script>
+		<script src="<?=JS?>index.js" charset="utf-8"></script>
 	</head>
 	<body>
 		<div class="overDiv flexCenterMiddleTop">
-			<img src="media/logo.svg" alt="Logo">
+			<img src="<?=IMG?>logo.svg" alt="Logo">
 			<div>
 				<button type="button" class="secondButton" onclick="showSignUp()">Crear Cuenta</button>
 				<button type="button" class="secondButton" onclick="showSignIn()">Iniciar Sesión</button>
