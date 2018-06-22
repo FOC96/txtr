@@ -1,4 +1,5 @@
 window.addEventListener('load', ()=>{
+    if (!localStorage.getItem("recientes") != "") localStorage.setItem("recientes", JSON.stringify([]));
     loadMyDocuments();
 });
 
@@ -40,13 +41,13 @@ createElementsDocuments = (idDoc, name, date) =>{
     documents = document.createElement("div");
     documents.setAttribute("class", "file");
     documents.setAttribute("id", idDoc);
-    documents.onclick = () => { edit(idDoc) };
+    // documents.onclick = () => { edit(idDoc) };
     div = document.createElement("div");
     div.setAttribute("class", "fileTools");
     btnDelete = document.createElement("button");
     btnDelete.setAttribute("class", "deleteButton");
     btnDelete.setAttribute("type", "button");
-    btnDelete.onclick = () => { delete(idDoc) };
+    btnDelete.onclick = () => { delDoc(idDoc) };
     btnDownload = document.createElement("button");
     btnDownload.setAttribute("class", "downloadButton");
     btnDownload.setAttribute("type", "button");
@@ -69,24 +70,67 @@ createElementsDocuments = (idDoc, name, date) =>{
 }
 
 newDocument = ()=>{
+    localStorage.setItem("isNew", true);
+    localStorage.setItem("nameDoc", "Nuevo Documento");
+    localStorage.setItem("bodyDoc", "");
     window.location.href = config.url +"Dashboard/editor";
 }
 
 edit = (idDocument)=>{
     axios.get('http://192.241.142.12:3000/user/documents/show/' + idDocument,
-        {
-            headers: { 'x-access-token': localStorage.getItem("token") }
-        })
-        .then(function (response) {
-            console.log(response);
-            if (!response.data.success) {
-                showAlert("Atención", "El documento no esta disponible por el momento", "Aceptar", "hideNotif()")
-            } else if (response.data.success) {
-                localStorage.setItem("bodyDoc", response.data.document.body);
-                localStorage.setItem("nameDoc", response.data.document.name);
-                window.location.href = config.url+"Dashboard/editor";
-            } else {
-                showAlert("Atención", "Algo ha salido mal intenta más tarde", "Aceptar", "hideNotif()")
-            }
-        });
+    {
+        headers: { 'x-access-token': localStorage.getItem("token") }
+    })
+    .then(function (response) {
+        console.log(response);
+        if (!response.data.success) {
+            showAlert("Atención", "El documento no esta disponible por el momento", "Aceptar", "hideNotif()")
+        } else if (response.data.success) {
+            localStorage.setItem("idDoc", response.data.document._id);
+            localStorage.setItem("bodyDoc", response.data.document.body);
+            localStorage.setItem("nameDoc", response.data.document.name);
+            localStorage.setItem("isNew", false);
+            recientes = localStorage.getItem("recientes");
+            recientes = JSON.parse(recientes);
+            let doc = {
+                name: response.data.document.name,
+                updatedAt: response.data.document.updatedAt,
+                _id: response.data.document._id
+            };
+            recientes.push(doc);
+            recientes = JSON.stringify(recientes);
+            localStorage.setItem("recientes", recientes);
+            window.location.href = config.url+"Dashboard/editor";
+        } else {
+            showAlert("Atención", "Algo ha salido mal intenta más tarde", "Aceptar", "hideNotif()")
+        }
+    });
+}
+
+delDoc = (idDoc)=>{
+    showAlert("Atención", "Deseas Eliminar este archivo? No se podra recuperar", "Aceptar", "deleteDoc('"+idDoc+"')", true)
+}
+
+deleteDoc = (idDoc)=>{
+    axios.delete('http://192.241.142.12:3000/user/documents/delete/' + idDoc,
+    {
+        headers: { 'x-access-token': localStorage.getItem("token") }
+    })
+    .then(function (response) {
+        console.log(response);
+        document.getElementById(idDoc).remove();
+        hideNotif();
+        // showAlert("Atención", "Documento elimado Correctamente", "Aceptar", "deleteDoc('" + idDoc + "')", true)
+        // if (!response.data.success) {
+        //     showAlert("Atención", "El documento no esta disponible por el momento", "Aceptar", "hideNotif()")
+        // } else if (response.data.success) {
+        //     localStorage.setItem("idDoc", response.data.document._id);
+        //     localStorage.setItem("bodyDoc", response.data.document.body);
+        //     localStorage.setItem("nameDoc", response.data.document.name);
+        //     localStorage.setItem("isNew", false);
+        //     window.location.href = config.url + "Dashboard/editor";
+        // } else {
+        //     showAlert("Atención", "Algo ha salido mal intenta más tarde", "Aceptar", "hideNotif()")
+        // }
+    });
 }

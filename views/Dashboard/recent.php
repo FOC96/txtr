@@ -13,6 +13,7 @@
 		<script src="<?=JS?>notificaciones.js" charset="utf-8"></script>
 		<script src="<?=JS?>index.js" charset="utf-8"></script>
 		<script src="<?=JS?>main.js" charset="utf-8"></script>
+		<script src="<?=JS?>documents/recientes.js" charset="utf-8"></script>
 	</head>
 	<body>
 		<?=$this->render('Default','menuLateral',true);?>
@@ -21,27 +22,13 @@
 				<!--  Encabezado-->
 				<div>
 					<!-- <h3>Ruta de carpetas /</h3> -->
-					<h1>Mis Documentos</h1>
+					<h1 id="title">Mis Documentos Recientes</h1>
 				</div>
 				<div class="searchSection">
 				</div>
 			</div>
 			<!--  CONTENIDO-->
-			<div class="mainContent">
-				<div class="file">
-					<div class="fileTools">
-						<button type="button" class="deleteButton"></button>
-						<button type="button" class="downloadButton"></button>
-						<button type="button" class="editButton"></button>
-					</div>
-					<p>Title</p>
-					<p>Date</p>
-				</div>
-				
-				<div class="newFile">
-					<img src="<?=IMG?>plus.svg" alt="">
-					<p>Crear Nuevo Documento</p>
-				</div>
+			<div class="mainContent" id="container">
 			</div>
 		</div>
 	</body>

@@ -17,18 +17,18 @@
 <body>
 	<div class="editTop">
 		<div>
-			<input type="text" value="New Document" class="docTitle" id="nameDocument">
+			<input type="text" value="Cargando..." class="docTitle" id="nameDocument">
 		</div>
 		<div>
 			<button type="button" class="thirdButton" onclick="share()">Compartir</button>
-			<button type="button" class="thirdButton" onclick="save()" id="save">Guardar y Salir</button>
+			<button type="button" class="thirdButton" onclick="exitAndSave()" id="save">Guardar y Salir</button>
 			<!-- <img src="" alt="" class="userPic"> -->
 		</div>
 	</div>
 		<div class="document-editor">
 		    <div class="document-editor__toolbar" id="toolbar"></div>
 		    <div class="document-editor__editable-container">
-		        <div class="document-editor__editable"> </div>
+		        <div class="document-editor__editable" id="cont"> </div>
 		    </div>
 		</div>
 </body>

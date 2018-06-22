@@ -4,6 +4,7 @@ window.addEventListener('load', () => {
 
 
 loadMyDocuments = () => {
+    idFolder = localStorage.getItem("idFolder");
     container = document.getElementById("container");
     docs = document.createElement("div");
     docs.setAttribute('class', 'newFile');
@@ -16,7 +17,7 @@ loadMyDocuments = () => {
     docs.appendChild(p);
     container.appendChild(docs);
 
-    axios.get('http://192.241.142.12:3000/user/documents',
+    axios.get('http://192.241.142.12:3000/user/folders/show/'+idFolder,
         {
             headers: { 'x-access-token': localStorage.getItem("token") }
         })
@@ -25,7 +26,8 @@ loadMyDocuments = () => {
             if (!response.data.success) {
                 showAlert("Atención", "Los documentos no estan disponibles por el momento", "Aceptar", "hideNotif()")
             } else if (response.data.success) {
-                response.data.documents.map((item) => {
+                document.getElementById("nameInsideFolder").value = response.data.folder.name;
+                response.data.folder.documents.map((item) => {
                     console.log(item);
                     let doc = createElementsDocuments(item._id, item.name, item.createdAt);
                     container.appendChild(doc);
@@ -70,4 +72,35 @@ createElementsDocuments = (idDoc, name, date) => {
 
 newDocument = () => {
     window.location.href = config.url + "Dashboard/editor";
+}
+
+atras = ()=>{
+    window.location.href = config.url + "Dashboard/myFolders";
+}
+
+
+confirmDel = ()=>{
+    showAlert("Atención", "Todos Los Documentos serán eliminados", "Aceptar", "deleteFolder()",true)
+}
+
+
+deleteFolder = ()=>{
+    hideNotif();
+    setTimeout(()=>{
+    },1000);
+    idFolder = localStorage.getItem("idFolder");
+    axios.delete('http://192.241.142.12:3000/user/folders/delete/' + idFolder,
+        {
+            headers: { 'x-access-token': localStorage.getItem("token") }
+        })
+        .then(function (response) {
+            console.log(response);
+            if (!response.data.success) {
+                showAlert("Atención", "Los documentos no estan disponibles por el momento", "Aceptar", "hideNotif()")
+            } else if (response.data.success) {
+                window.location.href = config.url + "Dashboard/myFolders";
+            } else {
+                showAlert("Atención", "Algo ha salido mal intenta más tarde", "Aceptar", "hideNotif()")
+            }
+        });
 }

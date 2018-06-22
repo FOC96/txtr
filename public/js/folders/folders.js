@@ -3,8 +3,8 @@ window.addEventListener('load', () => {
 });
 
 insideFolder = (idFolder) => {
-    alert(idFolder);
     localStorage.setItem("idFolder", idFolder);
+    window.location.href = config.url +"Dashboard/insideFolder"
 }
 
 loadMyFolders = () => {
