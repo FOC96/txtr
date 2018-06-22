@@ -3,7 +3,7 @@
 	error_reporting(E_ALL);
 	ini_set('display_errors', 'on');
 
-	define( 'URL' ,"http://localhost/".basename(getcwd())."/");
+	define( 'URL' ,"http://67.205.129.22/".basename(getcwd())."/");
 
 	define( 'CSS' , URL."public/css/");
 	define( 'JS' , URL."public/js/" );

@@ -45,3 +45,27 @@ createElementsDocuments = (idDoc, name, date) => {
     documents.appendChild(pd);
     return documents;
 }
+
+edit = (idDocument) => {
+    axios.get('http://192.241.142.12:3000/user/documents/show/' + idDocument,
+        {
+            headers: { 'x-access-token': localStorage.getItem("token") }
+        })
+        .then(function (response) {
+            if (!response.data.success) {
+                showAlert("Atención", "El documento no esta disponible por el momento", "Aceptar", "hideNotif()")
+            } else if (response.data.success) {
+                if (response.data.document != null){
+                    localStorage.setItem("idDoc", response.data.document._id);
+                    localStorage.setItem("bodyDoc", response.data.document.body);
+                    localStorage.setItem("nameDoc", response.data.document.name);
+                    localStorage.setItem("isNew", false);
+                    window.location.href = config.url + "Dashboard/editor";
+                } else {
+                    showAlert("Atención", "El Documento ya no existe", "Aceptar", "hideNotif()")
+                }
+            } else {
+                showAlert("Atención", "Algo ha salido mal intenta más tarde", "Aceptar", "hideNotif()")
+            }
+        });
+}

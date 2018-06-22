@@ -15,7 +15,6 @@ function isEmpty(array) {
 			flag = false
 		}
 	}
-
 	return flag
 }
 
@@ -37,15 +36,4 @@ function updateInfo() {
 logOut = ()=>{
 	localStorage.clear();
 	window.location.href = config.url;
-}
-
-loadMenu = (file)=>{
-	axios.get('../views/'+file)
-	.then(function (response) {
-		// mainSection
-		console.log(response);
-	})
-	.catch(function (error) {
-		console.log(error);
-	});
 }

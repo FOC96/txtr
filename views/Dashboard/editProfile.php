@@ -7,12 +7,13 @@
 		<link rel="stylesheet" href="<?=CSS?>generalDesign.css">
 		
 		<script src="<?=JS?>config.js"></script>
+		<script src="<?=JS?>libs/axios/axios.min.js"></script>
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="<?=CSS?>texter.css">
 		<script src="<?=JS?>notificaciones.js" charset="utf-8"></script>
 		<script src="<?=JS?>index.js" charset="utf-8"></script>
 		<script src="<?=JS?>main.js" charset="utf-8"></script>
-		<script src="<?=JS?>users/myProfile.js" charset="utf-8"></script>
+		<script defer src="<?=JS?>users/myProfile.js" charset="utf-8"></script>
 	</head>
 	<body>
 		<?=$this->render('Default','menuLateral',true);?>
@@ -45,20 +46,17 @@
 					</div>
 					<div class="flexTwo">
 						<label for="" class="one">Contraseña</label>
-						<input type="text" name="" value="" class="one">
+						<input type="password" name="" value="" class="one" id="pass">
 					</div>
 					<div class="flexTwo">
 						<label for="" class="one">Confirmar Contraseña</label>
-						<input type="text" name="" value="" class="one">
+						<input type="password" name="" value="" class="one" id="passConf">
 					</div>
 
 					<div class="one">
-						<button type="button" class="mainButton right" onclick="updateInfo()">Guardar Cambios</button>
+						<button type="button" class="mainButton right" onclick="saveProfile()">Guardar Cambios</button>
 					</div>
 				</div>
-
-
-
 			</div>
 		</div>
 	</body>

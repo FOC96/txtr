@@ -198,7 +198,7 @@ signUpAction = ()=> {
 		return null;
 	}
 	if (pass === passV) {
-		axios.post('http://192.241.142.12:3000/register', {
+		axios.post('http://192.241.142.12:3000/register/users', {
 			name: name,
 			surnames: last,
 			email: email,

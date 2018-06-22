@@ -11,8 +11,15 @@
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/10.0.1/decoupled-document/ckeditor.js"></script>
+	<script src="<?=JS?>notificaciones.js" charset="utf-8"></script>
 	<script src="<?=JS?>libs/axios/axios.min.js"></script>
 	<script src="<?=JS?>Documents/editor.js" charset="utf-8"></script>
+	<script>
+		console.log(localStorage.getItem("token"));
+		if(localStorage.getItem("token") == null){
+			window.location.href = config.url;
+		}
+	</script>
 </head>
 <body>
 	<div class="editTop">
@@ -20,7 +27,7 @@
 			<input type="text" value="Cargando..." class="docTitle" id="nameDocument">
 		</div>
 		<div>
-			<button type="button" class="thirdButton" onclick="share()">Compartir</button>
+			<button type="button" class="thirdButton" onclick="share()" id="shared">Compartir</button>
 			<button type="button" class="thirdButton" onclick="exitAndSave()" id="save">Guardar y Salir</button>
 			<!-- <img src="" alt="" class="userPic"> -->
 		</div>

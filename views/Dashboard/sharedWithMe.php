@@ -13,7 +13,7 @@
 		<script src="<?=JS?>notificaciones.js" charset="utf-8"></script>
 		<script src="<?=JS?>index.js" charset="utf-8"></script>
 		<script src="<?=JS?>main.js" charset="utf-8"></script>
-		<script src="<?=JS?>documents/shared.js" charset="utf-8"></script>
+		<script src="<?=JS?>documents/sharedWith.js" charset="utf-8"></script>
 	</head>
 	<body>
 		<?=$this->render('Default','menuLateral',true);?>
@@ -22,7 +22,7 @@
 				<!--  Encabezado-->
 				<div>
 					<!-- <h3>Ruta de carpetas /</h3> -->
-					<h1>Mis Compartidos</h1>
+					<h1>Documentos Compartidos Conmigo</h1>
 				</div>
 				<div class="searchSection">
 				</div>

@@ -29,6 +29,9 @@ return array(
             ),
             'recent' => array( 
                 'action' => 'recent' 
+            ),
+            'sharedWithMe' => array( 
+                'action' => 'sharedWithMe' 
             )
         )
     );  

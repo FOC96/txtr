@@ -1,23 +1,11 @@
 window.addEventListener('load', () => {
-    loadMyDocuments();
+    loadShared();
 });
 
 
-loadMyDocuments = () => {
-    idFolder = localStorage.getItem("idFolder");
+loadShared = () => {
     container = document.getElementById("container");
-    docs = document.createElement("div");
-    docs.setAttribute('class', 'newFile');
-    docs.onclick = () => { newDocument() };
-    img = document.createElement("img");
-    img.setAttribute('src', config.url + "public/img/plus.svg");
-    p = document.createElement("p");
-    p.textContent = 'Crear Nuevo Documento';
-    docs.appendChild(img);
-    docs.appendChild(p);
-    container.appendChild(docs);
-
-    axios.get('http://192.241.142.12:3000/user/folders/show/'+idFolder,
+    axios.get('http://192.241.142.12:3000/user/shared/owner',
         {
             headers: { 'x-access-token': localStorage.getItem("token") }
         })
@@ -26,12 +14,9 @@ loadMyDocuments = () => {
             if (!response.data.success) {
                 showAlert("Atención", "Los documentos no estan disponibles por el momento", "Aceptar", "hideNotif()")
             } else if (response.data.success) {
-                localStorage.setItem("idFolder", response.data.folder._id);
-                document.getElementById("nameInsideFolder").value = response.data.folder.name;
-                response.data.folder.documents.map((item) => {
-                    console.log(item);
-                    let doc = createElementsDocuments(item._id, item.name, item._createdAt);
-                    container.appendChild(doc);
+                response.data.shared.map((item) => {
+                    let doc = createElementsDocuments(item._id, item.owner.name, item.owner.surnames, item);
+                    container.prepend(doc);
                 });
             } else {
                 showAlert("Atención", "Algo ha salido mal intenta más tarde", "Aceptar", "hideNotif()")
@@ -39,32 +24,32 @@ loadMyDocuments = () => {
         });
 }
 
-createElementsDocuments = (idDoc, name, date) => {
+createElementsDocuments = (idDoc, name, surname, item) => {
     documents = document.createElement("div");
     documents.setAttribute("class", "file");
-    documents.setAttribute("id", idDoc);
-    // documents.onclick = () => { edit(idDoc) };
+    documents.setAttribute("id", item._id);
+    // documents.onclick = () => { edit(item._id) };
     div = document.createElement("div");
     div.setAttribute("class", "fileTools");
     btnDelete = document.createElement("button");
     btnDelete.setAttribute("class", "deleteButton");
     btnDelete.setAttribute("type", "button");
-    btnDelete.onclick = () => { delDoc (idDoc) };
+    btnDelete.onclick = () => { delDoc(item._id) };
     btnDownload = document.createElement("button");
     btnDownload.setAttribute("class", "downloadButton");
     btnDownload.setAttribute("type", "button");
-    btnDownload.onclick = () => { download(idDoc) };
+    btnDownload.onclick = () => { download(item._id) };
     btnEdit = document.createElement("button");
     btnEdit.setAttribute("class", "editButton");
     btnEdit.setAttribute("type", "button");
-    btnEdit.onclick = () => { edit(idDoc) };
+    btnEdit.onclick = () => { edit(item._id) };
     div.appendChild(btnDelete);
     div.appendChild(btnDownload);
-    div.appendChild(btnEdit);
+    // div.appendChild(btnEdit);
     pt = document.createElement("p");
-    pt.textContent = name;
+    pt.textContent = item.document.name + ' (' + item.guest.name+')';
     pd = document.createElement("p");
-    pd.textContent = date;
+    pd.textContent = item.document._updatedAt;
     documents.appendChild(div);
     documents.appendChild(pt);
     documents.appendChild(pd);
@@ -73,10 +58,9 @@ createElementsDocuments = (idDoc, name, date) => {
 
 newDocument = () => {
     localStorage.setItem("isNew", true);
-    localStorage.setItem("ofFolder", true);
+    localStorage.setItem("ofFolder", false);
     localStorage.setItem("nameDoc", "Nuevo Documento");
     localStorage.setItem("bodyDoc", "");
-    alert(localStorage.getItem("idDoc"));
     window.location.href = config.url + "Dashboard/editor";
 }
 
@@ -112,60 +96,18 @@ edit = (idDocument) => {
 }
 
 delDoc = (idDoc) => {
-    showAlert("Atención", "Deseas Eliminar este archivo? No se podra recuperar", "Aceptar", "deleteDoc('" + idDoc + "')", true)
+    alert(idDoc);
+    showAlert("Atención", "Deseas eliminar el enlace de compartir?", "Aceptar", "deleteDoc('" + idDoc + "')", true)
 }
 
-deleteDoc = (idDoc) => {
-    axios.delete('http://192.241.142.12:3000/user/documents/delete/' + idDoc,
-    {
-        headers: { 'x-access-token': localStorage.getItem("token") }
-    })
-    .then(function (response) {
-        console.log(response);
-        document.getElementById(idDoc).remove();
-        hideNotif();
-    });
-}
-
-atras = ()=>{
-    
-    idFolder = localStorage.getItem("idFolder");
-    axios.put('http://192.241.142.12:3000/user/folders/update/' + idFolder,
-        {
-            name: document.getElementById("nameInsideFolder").value
-        },
+deleteDoc = (idRef) => {
+    axios.delete('http://192.241.142.12:3000/user/shared/delete/' + idRef,
         {
             headers: { 'x-access-token': localStorage.getItem("token") }
         })
         .then(function (response) {
             console.log(response);
-            window.location.href = config.url + "Dashboard/myFolders";
-        });
-}
-
-
-confirmDel = ()=>{
-    showAlert("Atención", "Todos Los Documentos serán eliminados", "Aceptar", "deleteFolder()",true)
-}
-
-
-deleteFolder = ()=>{
-    hideNotif();
-    setTimeout(()=>{
-    },1000);
-    idFolder = localStorage.getItem("idFolder");
-    axios.delete('http://192.241.142.12:3000/user/folders/delete/' + idFolder,
-        {
-            headers: { 'x-access-token': localStorage.getItem("token") }
-        })
-        .then(function (response) {
-            console.log(response);
-            if (!response.data.success) {
-                showAlert("Atención", "Los documentos no estan disponibles por el momento", "Aceptar", "hideNotif()")
-            } else if (response.data.success) {
-                window.location.href = config.url + "Dashboard/myFolders";
-            } else {
-                showAlert("Atención", "Algo ha salido mal intenta más tarde", "Aceptar", "hideNotif()")
-            }
+            document.getElementById(idRef).remove();
+            hideNotif();
         });
 }

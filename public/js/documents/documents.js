@@ -6,31 +6,28 @@ window.addEventListener('load', ()=>{
 
 loadMyDocuments = () => {
     container = document.getElementById("container");
-    docs = document.createElement("div");
-    docs.setAttribute('class', 'newFile');
-    docs.onclick = () => { newDocument() };
-    img = document.createElement("img");
-    img.setAttribute('src', config.url+"public/img/plus.svg");
-    p = document.createElement("p");
-    p.textContent = 'Crear Nuevo Documento';
-    docs.appendChild(img);
-    docs.appendChild(p);
-    container.appendChild(docs);
-    
     axios.get('http://192.241.142.12:3000/user/documents',
     {
         headers: { 'x-access-token': localStorage.getItem("token") }
     })
     .then(function (response) {
-        console.log(response);
         if (!response.data.success) {
             showAlert("Atención", "Los documentos no estan disponibles por el momento", "Aceptar", "hideNotif()")
         } else if (response.data.success) {
             response.data.documents.map((item)=>{
-                console.log(item);
-                let doc = createElementsDocuments(item._id, item.name, item.createdAt);
-                container.appendChild(doc);
+                let doc = createElementsDocuments(item._id, item.name, item._createdAt);
+                container.prepend(doc);
             });
+            docs = document.createElement("div");
+            docs.setAttribute('class', 'newFile');
+            docs.onclick = () => { newDocument() };
+            img = document.createElement("img");
+            img.setAttribute('src', config.url + "public/img/plus.svg");
+            p = document.createElement("p");
+            p.textContent = 'Crear Nuevo Documento';
+            docs.appendChild(img);
+            docs.appendChild(p);
+            container.prepend(docs);
         } else {
             showAlert("Atención", "Algo ha salido mal intenta más tarde", "Aceptar", "hideNotif()")
         }
@@ -71,6 +68,7 @@ createElementsDocuments = (idDoc, name, date) =>{
 
 newDocument = ()=>{
     localStorage.setItem("isNew", true);
+    localStorage.setItem("ofFolder", false);
     localStorage.setItem("nameDoc", "Nuevo Documento");
     localStorage.setItem("bodyDoc", "");
     window.location.href = config.url +"Dashboard/editor";
@@ -82,7 +80,6 @@ edit = (idDocument)=>{
         headers: { 'x-access-token': localStorage.getItem("token") }
     })
     .then(function (response) {
-        console.log(response);
         if (!response.data.success) {
             showAlert("Atención", "El documento no esta disponible por el momento", "Aceptar", "hideNotif()")
         } else if (response.data.success) {
@@ -117,20 +114,7 @@ deleteDoc = (idDoc)=>{
         headers: { 'x-access-token': localStorage.getItem("token") }
     })
     .then(function (response) {
-        console.log(response);
         document.getElementById(idDoc).remove();
         hideNotif();
-        // showAlert("Atención", "Documento elimado Correctamente", "Aceptar", "deleteDoc('" + idDoc + "')", true)
-        // if (!response.data.success) {
-        //     showAlert("Atención", "El documento no esta disponible por el momento", "Aceptar", "hideNotif()")
-        // } else if (response.data.success) {
-        //     localStorage.setItem("idDoc", response.data.document._id);
-        //     localStorage.setItem("bodyDoc", response.data.document.body);
-        //     localStorage.setItem("nameDoc", response.data.document.name);
-        //     localStorage.setItem("isNew", false);
-        //     window.location.href = config.url + "Dashboard/editor";
-        // } else {
-        //     showAlert("Atención", "Algo ha salido mal intenta más tarde", "Aceptar", "hideNotif()")
-        // }
     });
 }

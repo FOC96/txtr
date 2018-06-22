@@ -36,5 +36,9 @@ class Dashboard extends Controller{
     public function shared(){
         $this->view->render($this,'shared');
     }
+
+    public function sharedWithMe(){
+        $this->view->render($this,'sharedWithMe');
+    }
 }
 ?>

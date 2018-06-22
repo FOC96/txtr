@@ -22,7 +22,6 @@ loadMyFolders = () => {
         headers: { 'x-access-token': localStorage.getItem("token") }
     })
     .then(function (response) {
-        console.log(response);
         if (!response.data.success) {
             showAlert("Atención", "Los documentos no estan disponibles por el momento", "Aceptar", "hideNotif()")
         } else if (response.data.success) {
@@ -50,7 +49,14 @@ createElementsFolders = (idFolder, name, isNew = true) => {
 
 newFolder = () => {
     let nameFolder = prompt("Ingresa el nombre de tu nueva carpeta");
-    if (nameFolder == "") showAlert("Atención", "Tú folder debe de contener un nombre", "Aceptar", "hideNotif()"); return null;
+    if (nameFolder == "") 
+    {
+        showAlert("Atención", "Tú folder debe de contener un nombre", "Aceptar", "hideNotif()");
+        return null;
+    }
+    if (!nameFolder){
+        return null;
+    }
     container = document.getElementById("container");
     axios.post('http://192.241.142.12:3000/user/folders/create',
     {
@@ -61,9 +67,9 @@ newFolder = () => {
     })
     .then(function (response) {
         console.log(response);
-        if (!response.data.status) {
+        if (!response.data.success) {
             showAlert("Atención", "Las Carpetas no estan disponibles por el momento", "Aceptar", "hideNotif()")
-        } else if (response.data.status) {
+        } else if (response.data.success) {
             let fol = createElementsFolders(response.data.folder._id, response.data.folder.name);
             container.appendChild(fol);
         } else {
