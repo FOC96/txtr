@@ -36,7 +36,7 @@ function updateInfo() {
 
 logOut = ()=>{
 	localStorage.clear();
-	location.href = config.url;
+	window.location.href = config.url;
 }
 
 loadMenu = (file)=>{

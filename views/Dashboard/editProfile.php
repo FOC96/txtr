@@ -12,25 +12,10 @@
 		<script src="<?=JS?>notificaciones.js" charset="utf-8"></script>
 		<script src="<?=JS?>index.js" charset="utf-8"></script>
 		<script src="<?=JS?>main.js" charset="utf-8"></script>
+		<script src="<?=JS?>users/myProfile.js" charset="utf-8"></script>
 	</head>
 	<body>
-		<div class="sideSection">
-			<!--  Side-->
-			<div class="profileInfo">
-				<!-- <img src="" alt="" class="userPicMain"> -->
-				<h3 id="name">Cargando...</h3>
-				<p id="surname">Cargando...</p>
-			</div>
-			<input type="search" id="searchInput">
-			<div class="menu">
-				<a href="<?=URL?>Dashboard/myFolders"><img src="<?=IMG?>folder.svg" alt="">Mis carpetas</a>
-				<a href="<?=URL?>Dashboard/"><img src="<?=IMG?>file.svg" alt="">Mis documentos</a>
-				<a href="<?=URL?>Dashboard/reciente"><img src="<?=IMG?>recent.svg" alt="">Recientes</a>
-				<a href="<?=URL?>Dashboard/compartidos"><img src="<?=IMG?>shared.svg" alt="">Documentos compartidos</a>
-				<a href="<?=URL?>Dashboard/editProfile"><img src="<?=IMG?>user.svg" alt="">Mi perfil</a>
-				<a href="<?=URL?>" onclick="logOut()"><img src="<?=IMG?>logOut.svg" alt="">Cerrar Sesión</a>
-			</div>
-		</div>
+		<?=$this->render('Default','menuLateral',true);?>
 		<div class="mainSection">
 			<div class="transTop">
 			<!--  Encabezado-->
@@ -48,15 +33,15 @@
 					</div> -->
 					<div class="flexTwo">
 						<label for="" class="one">Nombre</label>
-						<input type="text" name="" value="" class="one">
+						<input type="text" name="" value="" class="one" id="nameProfile">
 					</div>
 					<div class="flexTwo">
 						<label for="" class="one">Apellidos</label>
-						<input type="text" name="" value="" class="one">
+						<input type="text" name="" value="" class="one" id="surnameProfile">
 					</div>
 					<div class="one">
 						<label for="" class="one">Correo electrónico</label>
-						<input type="text" name="" value="" class="one">
+						<input type="text" name="" value="" class="one" id="emailProfile">
 					</div>
 					<div class="flexTwo">
 						<label for="" class="one">Contraseña</label>

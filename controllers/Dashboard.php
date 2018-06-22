@@ -24,5 +24,17 @@ class Dashboard extends Controller{
     public function myFolders(){
         $this->view->render($this,'myFolders');
     }
+
+    public function myDocuments(){
+        $this->view->render($this,'myDocuments');
+    }
+
+    public function recent(){
+        $this->view->render($this,'recent');
+    }
+
+    public function shared(){
+        $this->view->render($this,'shared');
+    }
 }
 ?>

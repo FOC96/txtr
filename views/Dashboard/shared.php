@@ -6,27 +6,43 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, maximum-scale=1.0">
 		<link rel="stylesheet" href="<?=CSS?>generalDesign.css">
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-		<link rel="stylesheet" href="<?=CSS?>texter.css">
-		
 		<script src="<?=JS?>libs/axios/axios.min.js"></script>
+        
 		<script src="<?=JS?>config.js"></script>
+		<link rel="stylesheet" href="<?=CSS?>texter.css">
 		<script src="<?=JS?>notificaciones.js" charset="utf-8"></script>
 		<script src="<?=JS?>index.js" charset="utf-8"></script>
 		<script src="<?=JS?>main.js" charset="utf-8"></script>
-		<script src="<?=JS?>folders/folders.js" charset="utf-8"></script>
 	</head>
 	<body>
 		<?=$this->render('Default','menuLateral',true);?>
-		<div class="mainSection">
+		<div class="mainSection" id="mainSection">
 			<div class="transTop">
-			<!--  Encabezado-->
+				<!--  Encabezado-->
 				<div>
-					<h3>Mis Carpetas</h3>
-					<h1>Mis Carpetas</h1>
+					<!-- <h3>Ruta de carpetas /</h3> -->
+					<h1>Mis Documentos</h1>
+				</div>
+				<div class="searchSection">
 				</div>
 			</div>
 			<!--  CONTENIDO-->
-			<div class="mainContent" id="container"> </div>
+			<div class="mainContent">
+				<div class="file">
+					<div class="fileTools">
+						<button type="button" class="deleteButton"></button>
+						<button type="button" class="downloadButton"></button>
+						<button type="button" class="editButton"></button>
+					</div>
+					<p>Title</p>
+					<p>Date</p>
+				</div>
+				
+				<div class="newFile">
+					<img src="<?=IMG?>plus.svg" alt="">
+					<p>Crear Nuevo Documento</p>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>

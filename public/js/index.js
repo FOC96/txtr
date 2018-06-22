@@ -1,10 +1,3 @@
-// window.addEventListener("load",()=>{
-// 	if(localStorage.getItem("token") != ""){
-// 		location.href = config.url+"Dashboard";
-// 	} else {
-// 		location.heref = config.url;
-// 	}
-// })
 //Regresa de regInst a back
 function showNormal() {
 	window.history.back()
@@ -47,7 +40,7 @@ function showSignIn() {
 					+"<input type='password' id='userPass' class='one'>"
 				+"</div>"
 				+"<div class='buttonsArea'>"
-					+"<button type='button' class='secondButton flexThree'>Registrarme</button>"
+			+ "<button type='button' class='secondButton flexThree' onclick='showSignUp()'>Registrarme</button>"
 					+"<button type='button' class='mainButton flexThree' onClick='signInAction()'>Ingresar</button>"
 				+"</div>";
 
@@ -157,22 +150,38 @@ function signInAction() {
 		password: pass 
 	})
 	.then(function (response) {
-		console.log(response);
 		if (!response.data.success){
 			showAlert("Atención", "Correo o contraseña no validos, Verifica", "Aceptar", "hideNotif()")
 		} else if (response.data.success){
-			localStorage.setItem("token", response.data.data.token);
-			localStorage.setItem("email", response.data.user.email);
-			localStorage.setItem("name", response.data.user.name);
-			localStorage.setItem("surname", response.data.user.surnames);
-			localStorage.setItem("id", response.data.user._id);
-			window.location.assign(config.url+"Dashboard");
+			localStorage.setItem("token", response.data.token);
+			localStorage.setItem("id", response.data.id);
+			console.log(config.url +"Dashboard");
+			getDataUser();
 		} else {
 			showAlert("Atención", "Algo ha salido mal intenta más tarde", "Aceptar", "hideNotif()")
 		}
 	})
 	.catch(function (error) {
 		console.log(error);
+	});
+}
+
+getDataUser = ()=>{
+	axios.get('http://192.241.142.12:3000/users/account',
+	{
+		headers: { 'x-access-token': localStorage.getItem("token") }
+	})
+	.then(function (response) {
+		if (!response.data.success) {
+			showAlert("Atención", "Error en la verificación del Token", "Aceptar", "hideNotif()")
+		} else if (response.data.success) {
+			localStorage.setItem("email", response.data.user.email);
+			localStorage.setItem("name", response.data.user.name);
+			localStorage.setItem("surname", response.data.user.surnames);
+			window.location.href = (config.url+"Dashboard");
+		} else {
+			showAlert("Atención", "Algo ha salido mal intenta más tarde", "Aceptar", "hideNotif()")
+		}
 	});
 }
 
@@ -196,7 +205,6 @@ signUpAction = ()=> {
 			password: pass
 		})
 		.then(function (response) {
-			console.log(response.data);
 			res = response.data;
 			if (!res.success){
 				if(res.errors.code == 11000){

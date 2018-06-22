@@ -14,22 +14,7 @@
 		<script src="<?=JS?>main.js" charset="utf-8"></script>
 	</head>
 	<body>
-		<div class="sideSection">
-			<!--  Side-->
-			<div class="profileInfo">
-				<!-- <img src="" alt="" class="userPicMain"> -->
-				<h3 id="name">Cargando...</h3>
-				<p id="surname">Cargando...</p>
-			</div>
-			<input type="search" id="searchInput">
-			<div class="menu">
-				<a href="<?=URL?>Dashboard/myFolders"><img src="<?=IMG?>folder.svg" alt="">Mis carpetas</a>
-				<a href="<?=URL?>Dashboard/"><img src="<?=IMG?>file.svg" alt="">Mis documentos</a>
-				<a href="<?=URL?>Dashboard/reciente"><img src="<?=IMG?>recent.svg" alt="">Recientes</a>
-				<a href="<?=URL?>Dashboard/compartidos"><img src="<?=IMG?>shared.svg" alt="">Documentos compartidos</a>
-				<a href="<?=URL?>Dashboard/editProfile"><img src="<?=IMG?>user.svg" alt="">Mi perfil</a>
-				<a href="<?=URL?>" onclick="logOut()"><img src="<?=IMG?>logOut.svg" alt="">Cerrar Sesión</a>
-			</div>
+		<?=$this->render('Default','menuLateral',true);?>>
 		</div>
 		<div class="mainSection">
 			<div class="transTop">
@@ -45,7 +30,6 @@
 			</div>
 			<!--  CONTENIDO-->
 			<div class="mainContent">
-
 				<div class="file">
 					<div class="fileTools">
 						<button type="button" class="deleteButton"></button>
@@ -55,16 +39,12 @@
 					<p>Title</p>
 					<p>Date</p>
 				</div>
-
 				<div class="newFile">
 					<img src="../media/plus.svg" alt="">
 					<p>Crear Nuevo Documento</p>
 				</div>
 
 			</div>
-
-
-
 		</div>
 	</body>
 </html>

@@ -20,6 +20,15 @@ return array(
             ),
             'myFolders' => array( 
                 'action' => 'myFolders' 
+            ),
+            'shared' => array( 
+                'action' => 'shared' 
+            ),
+            'myDocuments' => array( 
+                'action' => 'myDocuments' 
+            ),
+            'recent' => array( 
+                'action' => 'recent' 
             )
         )
     );  

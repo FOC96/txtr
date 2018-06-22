@@ -1,14 +1,14 @@
-function showAlert(title, msg, action, fun) {
+function showAlert(title, msg, action, fun, btnCan = false) {
 	var back2 = document.createElement("div")
 	back2.className = "notifBackBlack";
 	document.body.appendChild(back2)
-
+	btnCancel = (btnCan == true) ? '<button type="button" class="secondButton flexFour" onClick="hideNotif()">Cancelar</button>' : '';
 	cont = '<div class="notif popWindow" id="popUpAlert">'
 		+'<button class="closeButton" onClick="hideNotif()"></button>'
 		+'<h3 class="one">'+title+'</h3>'
 		+'<p class="one">'+msg+'</p>'
 		+'<div class="flexFormSpace">'
-			+'<button type="button" class="secondButton flexFour" onClick="hideNotif()">Cancelar</button>'
+			+btnCancel
 			+'<button type="button" class="mainButton flexFour" onClick="'+fun+'">'+action+'</button>'
 		+'</div>'
 	+'</div>'
