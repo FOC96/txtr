@@ -13,6 +13,7 @@ loadShared = () => {
             if (!response.data.success) {
                 showAlert("Atención", "Los documentos no estan disponibles por el momento", "Aceptar", "hideNotif()")
             } else if (response.data.success) {
+                console.log(response)
                 response.data.shared.map((item) => {
                     let doc = createElementsDocuments(item._id, item.owner.name, item.owner.surnames, item);
                     container.prepend(doc);
@@ -37,7 +38,7 @@ createElementsDocuments = (idDoc, name, surname, item) => {
     btnDownload = document.createElement("button");
     btnDownload.setAttribute("class", "downloadButton");
     btnDownload.setAttribute("type", "button");
-    btnDownload.onclick = () => { download(item._id) };
+    btnDownload.onclick = () => { download(item.document._id) };
     btnEdit = document.createElement("button");
     btnEdit.setAttribute("class", "editButton");
     btnEdit.setAttribute("type", "button");
