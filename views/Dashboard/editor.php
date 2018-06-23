@@ -8,9 +8,9 @@
 	<link rel="stylesheet" href="<?=CSS?>texter.css">
 
 	<script src="<?=JS?>config.js"></script>
-	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/10.0.1/decoupled-document/ckeditor.js"></script>
+	<script src="<?=JS?>libs/ckeditor/jquery-1.12.4.js"></script>
+  	<script src="<?=JS?>libs/ckeditor/jquery-ui.js"></script>
+    <script src="<?=JS?>libs/ckeditor/ckeditor.js"></script>
 	<script src="<?=JS?>notificaciones.js" charset="utf-8"></script>
 	<script src="<?=JS?>libs/axios/axios.min.js"></script>
 	<script src="<?=JS?>Documents/editor.js" charset="utf-8"></script>
