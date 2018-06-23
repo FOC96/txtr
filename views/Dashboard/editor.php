@@ -13,9 +13,9 @@
     <script src="<?=JS?>libs/ckeditor/ckeditor.js"></script>
 	<script src="<?=JS?>notificaciones.js" charset="utf-8"></script>
 	<script src="<?=JS?>libs/axios/axios.min.js"></script>
-	<script src="<?=JS?>Documents/editor.js" charset="utf-8"></script>
+	<script defer src="<?=JS?>documents/editor.js" charset="utf-8"></script>
+
 	<script>
-		console.log(localStorage.getItem("token"));
 		if(localStorage.getItem("token") == null){
 			window.location.href = config.url;
 		}
