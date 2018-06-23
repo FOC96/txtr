@@ -13,7 +13,6 @@ loadMyDocuments = () => {
         document.getElementById("title").textContent = "Sin Documentos Recientes";
     }
     documents.map((item) => {
-        console.log(item);
         let doc = createElementsDocuments(item._id, item.name, item.createdAt);
         container.appendChild(doc);
     });

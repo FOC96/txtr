@@ -22,7 +22,7 @@ loadMyDocuments = () => {
             headers: { 'x-access-token': localStorage.getItem("token") }
         })
         .then(function (response) {
-            console.log(response);
+            
             if (!response.data.success) {
                 showAlert("Atención", "Los documentos no estan disponibles por el momento", "Aceptar", "hideNotif()")
             } else if (response.data.success) {
@@ -76,7 +76,6 @@ newDocument = () => {
     localStorage.setItem("ofFolder", true);
     localStorage.setItem("nameDoc", "Nuevo Documento");
     localStorage.setItem("bodyDoc", "");
-    alert(localStorage.getItem("idDoc"));
     window.location.href = config.url + "Dashboard/editor";
 }
 
@@ -86,7 +85,7 @@ edit = (idDocument) => {
             headers: { 'x-access-token': localStorage.getItem("token") }
         })
         .then(function (response) {
-            console.log(response);
+            
             if (!response.data.success) {
                 showAlert("Atención", "El documento no esta disponible por el momento", "Aceptar", "hideNotif()")
             } else if (response.data.success) {
@@ -121,7 +120,7 @@ deleteDoc = (idDoc) => {
         headers: { 'x-access-token': localStorage.getItem("token") }
     })
     .then(function (response) {
-        console.log(response);
+        
         document.getElementById(idDoc).remove();
         hideNotif();
     });
@@ -138,7 +137,7 @@ atras = ()=>{
             headers: { 'x-access-token': localStorage.getItem("token") }
         })
         .then(function (response) {
-            console.log(response);
+            
             window.location.href = config.url + "Dashboard/myFolders";
         });
 }
@@ -159,7 +158,7 @@ deleteFolder = ()=>{
             headers: { 'x-access-token': localStorage.getItem("token") }
         })
         .then(function (response) {
-            console.log(response);
+            
             if (!response.data.success) {
                 showAlert("Atención", "Los documentos no estan disponibles por el momento", "Aceptar", "hideNotif()")
             } else if (response.data.success) {

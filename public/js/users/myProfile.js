@@ -47,7 +47,7 @@ saveProfile = () => {
             headers: { 'x-access-token': localStorage.getItem("token") }
         })
         .then(function (response) {
-            console.log(response);
+            
             if (!response.data.success) {
                 showAlert("Atención", "Los documentos no estan disponibles por el momento", "Aceptar", "hideNotif()")
             } else if (response.data.success) {

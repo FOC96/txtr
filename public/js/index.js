@@ -155,7 +155,6 @@ function signInAction() {
 		} else if (response.data.success){
 			localStorage.setItem("token", response.data.token);
 			localStorage.setItem("id", response.data.id);
-			console.log(config.url +"Dashboard");
 			getDataUser();
 		} else {
 			showAlert("Atención", "Algo ha salido mal intenta más tarde", "Aceptar", "hideNotif()")

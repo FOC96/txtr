@@ -14,6 +14,7 @@
 		<script src="<?=JS?>index.js" charset="utf-8"></script>
 		<script src="<?=JS?>main.js" charset="utf-8"></script>
 		<script src="<?=JS?>documents/sharedWith.js" charset="utf-8"></script>
+		<script src="<?=JS?>documents/download.js" charset="utf-8"></script>
 	</head>
 	<body>
 		<?=$this->render('Default','menuLateral',true);?>

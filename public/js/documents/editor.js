@@ -39,10 +39,8 @@ exitAndSave = (option = true)=>{
 saveOrUpdate =(option = false)=>{
     if (localStorage.getItem("isNew") == "true") {
         if (localStorage.getItem('ofFolder') == "true"){
-            alert("guardando doc en folder")
             saveOfFolder(option);
         } else {
-            alert("guardando doc")
             save(option);
         }
     } else {
@@ -51,7 +49,6 @@ saveOrUpdate =(option = false)=>{
 }
 
 save = (option)=>{
-    // console.log(edit.getData());
     axios.post('http://192.241.142.12:3000/user/documents/create',
     {
         name: document.getElementById("nameDocument").value,
@@ -75,7 +72,6 @@ save = (option)=>{
 
 
 update = (option)=>{
-    // alert("guardando");
     btnSave = document.getElementById('save');
     btnSave.textContent = 'Guardando...';
     let idDoc = localStorage.getItem("idDoc");
@@ -88,7 +84,6 @@ update = (option)=>{
         headers: { 'x-access-token': localStorage.getItem("token") }
     })
     .then(function (response) {
-        // console.log(response);
         if (response.data.success) {
             localStorage.setItem("bodyDoc", edit.getData());
             localStorage.setItem("nameDoc", document.getElementById("nameDocument").value);
@@ -116,7 +111,6 @@ share = ()=>{
         headers: { 'x-access-token': localStorage.getItem("token") }
     })
     .then(function (response) {
-        console.log(response);
         if (response.data.success) {
             btnShared.textContent = 'Compartir';
             showAlert("Hecho", "Se ha compartido correctamente", "Aceptar", "hideNotif()")
@@ -151,7 +145,6 @@ saveOfFolder = (option) => {
                         headers: { 'x-access-token': localStorage.getItem("token") }
                     })
                     .then(function (response) {
-                        console.log(response);
                         if(response.data.update.n == 1){
                             if (option) window.location.href = config.url + "Dashboard";
                         } else {
@@ -166,7 +159,6 @@ saveOfFolder = (option) => {
 
 
 updateOfFolder = (option) => {
-    // alert("guardando");
     btnSave = document.getElementById('save');
     btnSave.textContent = 'Guardando...';
     let idDoc = localStorage.getItem("idDoc");

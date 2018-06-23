@@ -10,7 +10,7 @@ loadShared = () => {
             headers: { 'x-access-token': localStorage.getItem("token") }
         })
         .then(function (response) {
-            console.log(response);
+            
             if (!response.data.success) {
                 showAlert("Atención", "Los documentos no estan disponibles por el momento", "Aceptar", "hideNotif()")
             } else if (response.data.success) {
@@ -71,7 +71,7 @@ edit = (idDocument) => {
             headers: { 'x-access-token': localStorage.getItem("token") }
         })
         .then(function (response) {
-            console.log(response);
+            
             if (!response.data.success) {
                 showAlert("Atención", "El documento no esta disponible por el momento", "Aceptar", "hideNotif()")
             } else if (response.data.success) {
@@ -106,7 +106,7 @@ deleteDoc = (idDoc) => {
             headers: { 'x-access-token': localStorage.getItem("token") }
         })
         .then(function (response) {
-            console.log(response);
+            
             document.getElementById(idDoc).remove();
             hideNotif();
         });

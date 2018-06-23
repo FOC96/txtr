@@ -9,6 +9,7 @@
 		<script src="<?=JS?>libs/axios/axios.min.js"></script>
         
 		<script src="<?=JS?>config.js"></script>
+		<script src="<?=JS?>documents/download.js" charset="utf-8"></script>
 		<link rel="stylesheet" href="<?=CSS?>texter.css">
 		<script src="<?=JS?>notificaciones.js" charset="utf-8"></script>
 		<script src="<?=JS?>documents/documents.js" charset="utf-8"></script>
